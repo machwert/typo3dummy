@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /backup/
+Disallow: /logs/
+Disallow: /t3lib/
+Disallow: /tslib/
+Disallow: /typo3/
+Disallow: /typo3conf/
+Disallow: /uploads/
+
+
+
+

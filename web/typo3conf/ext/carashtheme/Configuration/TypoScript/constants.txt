@@ -1,0 +1,5 @@
+<INCLUDE_TYPOSCRIPT: source="DIR: ./Library" extensions="txt">
+
+confDir = EXT:carashtheme/Configuration
+resDir = EXT:carashtheme/Resources
+#customCss = EXT:carashtheme/Resources/Public/Stylesheets/main_styles.less

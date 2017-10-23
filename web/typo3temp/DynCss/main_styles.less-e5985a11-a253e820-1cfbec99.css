@@ -1,0 +1,30 @@
+body {
+  background-color: red;
+}
+.offcanvas {
+  position: fixed;
+  left: 0px;
+  width: 320px;
+  background-color: #dedede;
+  height: 100%;
+  padding-top: 10%;
+}
+.header ul.topnav {
+  display: table;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+}
+.header ul.topnav li {
+  display: table-row;
+}
+.header ul.topnav li {
+  width: 100%;
+}
+.menu-icon {
+  width: 50px;
+  display: table-cell;
+}
+.menu-text {
+  display: table-cell;
+}

@@ -1,0 +1,19 @@
+<div id="sb-site" class="wrapper wrapper_overview {f:cObject(typoscriptObjectPath:'lib.whoami')}">
+    <f:render partial="Header" />
+    <f:format.raw>{mainContent}</f:format.raw>
+    <f:render partial="Footer" />
+</div>
+
+<div class="sb-slidebar sb-right mobilenavs">
+    <div class="mobilelogo">
+        <f:cObject typoscriptObjectPath="lib.mobileLogo" />
+    </div>
+    <ul class="mobilenav clearfix">
+        <f:cObject typoscriptObjectPath="lib.mobileNav" />
+    </ul>
+</div>
+
+<div class="btt">
+    <a href="#" class="icon-up-open back-to-top"></a>
+</div>
+

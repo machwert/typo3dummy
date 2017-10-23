@@ -1142,6 +1142,126 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_befunc.php']['displ
 
 
 /**
+ * Extension: scheduler
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3/sysext/scheduler/ext_localconf.php
+ */
+
+$_EXTKEY = 'scheduler';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+// Register the Scheduler as a possible key for CLI calls
+// Using cliKeys is deprecated as of TYPO3 v8 and will be removed in TYPO3 v9, use Configuration/Commands.php instead
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['GLOBAL']['cliKeys']['scheduler'] = [
+    function ($input, $output) {
+        $app = new \Symfony\Component\Console\Application('TYPO3 Scheduler', TYPO3_version);
+        $app->add(new \TYPO3\CMS\Scheduler\Command\SchedulerCommand('scheduler'));
+        $app->setDefaultCommand('scheduler');
+        $app->run($input, $output);
+    }
+];
+
+// Get the extensions's configuration
+$extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['scheduler'], ['allowed_classes' => false]);
+// If sample tasks should be shown,
+// register information for the test and sleep tasks
+if (!empty($extConf['showSampleTasks'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Example\TestTask::class] = [
+        'extension' => 'scheduler',
+        'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:testTask.name',
+        'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:testTask.description',
+        'additionalFields' => \TYPO3\CMS\Scheduler\Example\TestTaskAdditionalFieldProvider::class
+    ];
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Example\SleepTask::class] = [
+        'extension' => 'scheduler',
+        'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:sleepTask.name',
+        'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:sleepTask.description',
+        'additionalFields' => \TYPO3\CMS\Scheduler\Example\SleepTaskAdditionalFieldProvider::class
+    ];
+}
+
+// Add caching framework garbage collection task
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\CachingFrameworkGarbageCollectionTask::class] = [
+    'extension' => 'scheduler',
+    'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:cachingFrameworkGarbageCollection.name',
+    'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:cachingFrameworkGarbageCollection.description',
+    'additionalFields' => \TYPO3\CMS\Scheduler\Task\CachingFrameworkGarbageCollectionAdditionalFieldProvider::class
+];
+
+// Add task to index file in a storage
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\FileStorageIndexingTask::class] = [
+    'extension' => 'scheduler',
+    'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:fileStorageIndexing.name',
+    'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:fileStorageIndexing.description',
+    'additionalFields' => \TYPO3\CMS\Scheduler\Task\FileStorageIndexingAdditionalFieldProvider::class
+];
+
+// Add task for extracting metadata from files in a storage
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\FileStorageExtractionTask::class] = [
+    'extension' => 'scheduler',
+    'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:fileStorageExtraction.name',
+    'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:fileStorageExtraction.description',
+    'additionalFields' => \TYPO3\CMS\Scheduler\Task\FileStorageExtractionAdditionalFieldProvider::class
+
+];
+
+// Add recycler directory cleanup task
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\RecyclerGarbageCollectionTask::class] = [
+    'extension' => 'scheduler',
+    'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:recyclerGarbageCollection.name',
+    'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:recyclerGarbageCollection.description',
+    'additionalFields' => \TYPO3\CMS\Scheduler\Task\RecyclerGarbageCollectionAdditionalFieldProvider::class
+];
+
+// Save any previous option array for table garbage collection task
+// to temporary variable so it can be pre-populated by other
+// extensions and LocalConfiguration/AdditionalConfiguration
+$garbageCollectionTaskOptions = [];
+if (is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options'])) {
+    $garbageCollectionTaskOptions = $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options'];
+}
+// Initialize tables sub-array if not set already
+if (!is_array($garbageCollectionTaskOptions['tables'])) {
+    $garbageCollectionTaskOptions['tables'] = [];
+}
+// Add table garbage collection task
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class] = [
+    'extension' => 'scheduler',
+    'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:tableGarbageCollection.name',
+    'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:tableGarbageCollection.description',
+    'additionalFields' => \TYPO3\CMS\Scheduler\Task\TableGarbageCollectionAdditionalFieldProvider::class,
+    'options' => $garbageCollectionTaskOptions
+];
+unset($garbageCollectionTaskOptions);
+
+// Register sys_log and sys_history table in table garbage collection task
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['sys_log'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['sys_log'] = [
+        'dateField' => 'tstamp',
+        'expirePeriod' => 180
+    ];
+}
+
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['sys_history'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['sys_history'] = [
+        'dateField' => 'tstamp',
+        'expirePeriod' => 30
+    ];
+}
+
+// Add task for optimizing database tables
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\OptimizeDatabaseTableTask::class] = [
+    'extension' => 'scheduler',
+    'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:optimizeDatabaseTable.name',
+    'description' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang.xlf:optimizeDatabaseTable.description',
+    'additionalFields' => \TYPO3\CMS\Scheduler\Task\OptimizeDatabaseTableAdditionalFieldProvider::class
+
+];
+
+
+/**
  * Extension: sv
  * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3/sysext/sv/ext_localconf.php
  */
@@ -1224,6 +1344,450 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1433089350] = [
     'priority' => 40,
     'class' => \TYPO3\CMS\T3editor\Form\Element\T3editorElement::class,
 ];
+
+
+/**
+ * Extension: realurl
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/realurl/ext_localconf.php
+ */
+
+$_EXTKEY = 'realurl';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if (!defined('TX_REALURL_AUTOCONF_FILE')) {
+	define('TX_REALURL_AUTOCONF_FILE', 'typo3conf/realurl_autoconf.php');
+}
+
+if (!function_exists('includeRealurlConfiguration')) {
+
+	/**
+	 * Includes RealURL configuration.
+	 *
+	 * @return void
+	 */
+	function includeRealurlConfiguration() {
+		$configuration = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['realurl'];
+		if (is_string($configuration)) {
+			$configuration = @unserialize($configuration);
+		}
+
+		if (!is_array($configuration)) {
+			$configuration = array(
+				'configFile' => 'typo3conf/realurl_conf.php',
+				'enableAutoConf' => true,
+			);
+		}
+
+		$realurlConfigurationFile = trim($configuration['configFile']);
+		if ($realurlConfigurationFile && @file_exists(PATH_site . $realurlConfigurationFile)) {
+			\TYPO3\CMS\Core\Utility\GeneralUtility::requireOnce(PATH_site . $realurlConfigurationFile);
+		}
+		elseif ($configuration['enableAutoConf']) {
+			/** @noinspection PhpIncludeInspection */
+			@include_once(PATH_site . TX_REALURL_AUTOCONF_FILE);
+		}
+	}
+}
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tstemplate.php']['linkData-PostProc']['realurl'] = 'DmitryDulepov\\Realurl\\Encoder\\UrlEncoder->encodeUrl';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_content.php']['typoLink_PostProc']['realurl'] = 'DmitryDulepov\\Realurl\\Encoder\\UrlEncoder->postProcessEncodedUrl';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['checkAlternativeIdMethods-PostProc']['realurl'] = 'DmitryDulepov\\Realurl\\Decoder\\UrlDecoder->decodeUrl';
+
+includeRealurlConfiguration();
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['realurl'] = 'DmitryDulepov\\Realurl\\Hooks\\DataHandler';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass']['realurl'] = 'DmitryDulepov\\Realurl\\Hooks\\DataHandler';
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['realurl']['cacheImplementation'] = 'DmitryDulepov\\Realurl\\Cache\\DatabaseCache';
+
+$GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields'] .= ($GLOBALS['TYPO3_CONF_VARS']['FE']['addRootLineFields'] ? ',' : '') . 'tx_realurl_pathsegment,tx_realurl_exclude,tx_realurl_pathoverride';
+$GLOBALS['TYPO3_CONF_VARS']['FE']['pageOverlayFields'] .= ($GLOBALS['TYPO3_CONF_VARS']['FE']['pageOverlayFields'] ? ',' : '' ) . 'tx_realurl_pathsegment';
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['DmitryDulepov\\Realurl\\Evaluator\\SegmentFieldCleaner'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('realurl', 'Classes/Evaluator/SegmentFieldCleaner.php');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:realurl/Configuration/TSConfig.txt">');
+
+// Scheduler clean up of expired tables
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['TYPO3\\CMS\\Scheduler\\Task\\TableGarbageCollectionTask']['options']['tables']['tx_realurl_urldata'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['TYPO3\\CMS\\Scheduler\\Task\\TableGarbageCollectionTask']['options']['tables']['tx_realurl_urldata'] = array(
+        'expireField' => 'expire',
+    );
+}
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['TYPO3\\CMS\\Scheduler\\Task\\TableGarbageCollectionTask']['options']['tables']['tx_realurl_pathdata'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['TYPO3\\CMS\\Scheduler\\Task\\TableGarbageCollectionTask']['options']['tables']['tx_realurl_pathdata'] = array(
+        'expireField' => 'expire',
+    );
+}
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['TYPO3\\CMS\\Scheduler\\Task\\TableGarbageCollectionTask']['options']['tables']['tx_realurl_uniqalias'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks']['TYPO3\\CMS\\Scheduler\\Task\\TableGarbageCollectionTask']['options']['tables']['tx_realurl_uniqalias'] = array(
+        'expireField' => 'expire',
+    );
+}
+
+// Exclude gclid from cHash because TYPO3 does not do that
+if (!in_array('gclid', $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['cacheHash']['excludedParameters'][] = 'gclid';
+    $GLOBALS['TYPO3_CONF_VARS']['FE']['cHashExcludedParameters'] .= ', gclid';
+}
+
+
+/**
+ * Extension: carashtheme
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/carashtheme/ext_localconf.php
+ */
+
+$_EXTKEY = 'carashtheme';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if(!defined ('TYPO3_MODE')){
+    die('Access denied.');
+}
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:carashtheme/Configuration/TSConfig/Page.ts">'
+);
+
+/**
+ * Configure Custom Content Element
+ */
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'Machwert.'.$_EXTKEY,
+    'CustomContentElement',
+    array(
+        'CustomElement' => 'render',
+    ),
+    array(
+    ),
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+);
+
+
+/**
+ * Include TypoScript for tt_content before static
+ */
+$customFluidContentElementTypoScriptConstants = trim('
+plugin.tx_carashtheme {
+    view {
+        templateRootPath = EXT:carashtheme/Resources/Private/Templates/
+        partialRootPath = EXT:carashtheme/Resources/Private/Partials/
+        layoutRootPath = EXT:carashtheme/Resources/Private/Layouts/
+    }
+}
+');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    $_EXTKEY,
+    'constants',
+    $customFluidContentElementTypoScriptConstants
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    $_EXTKEY,
+    'setup',
+    $customFluidContentElementTypoScriptSetup,
+    43
+);
+
+
+/**
+ * Extension: dyncss
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/dyncss/ext_localconf.php
+ */
+
+$_EXTKEY = 'dyncss';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+/***************************************************************
+*  Copyright notice
+*
+*  (c) 2012 Kay Strobach <typo3@kay-strobach.de>
+*
+*  All rights reserved
+*
+*  This script is part of the TYPO3 project. The TYPO3 project is
+*  free software; you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation; either version 2 of the License, or
+*  (at your option) any later version.
+*
+*  The GNU General Public License can be found at
+*  http://www.gnu.org/copyleft/gpl.html.
+*
+*  This script is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
+*
+*  This copyright notice MUST APPEAR in all copies of the script!
+***************************************************************/
+
+/**
+ * @author Kay Strobach
+ */
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
+}
+//if(TYPO3_MODE === 'BE') {
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][] = 'KayStrobach\Dyncss\Hooks\T3libPageRendererRenderPreProcessHook->execute';
+//} elseif(TYPO3_MODE === 'FE') {
+//	$TYPO3_CONF_VARS['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-all'][] = 'KayStrobach\Dyncss\Hooks\TslibFeContentPostProcAllHook->main';
+//}
+
+
+// clear cache item
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc'][] = 'KayStrobach\Dyncss\Hooks\T3libTcemainHook->clearCachePostProc';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['additionalBackendItems']['cacheActions'][] = 'KayStrobach\Dyncss\Hooks\Backend\Toolbar\ClearCacheActionsHook';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] = 'KayStrobach\Dyncss\Command\DyncssCommandController';
+
+
+/**
+ * Extension: dyncss_less
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/dyncss_less/ext_localconf.php
+ */
+
+$_EXTKEY = 'dyncss_less';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if (class_exists('\KayStrobach\Dyncss\Configuration\BeRegistry')) {
+    \KayStrobach\Dyncss\Configuration\BeRegistry::get()->registerFileHandler('less', 'KayStrobach\DyncssLess\Parser\LessParser');
+}
+
+
+/**
+ * Extension: mw_dummy
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/mw_dummy/ext_localconf.php
+ */
+
+$_EXTKEY = 'mw_dummy';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if(!defined ('TYPO3_MODE')){
+    die('Access denied.');
+}
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mw_dummy/Configuration/TSConfig/Page.ts">'
+);
+
+/**
+ * Configure Custom Content Element
+ */
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'Machwert.'.$_EXTKEY,
+    'CustomContentElement',
+    array(
+        'CustomElement' => 'render',
+    ),
+    array(
+    ),
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+);
+
+
+/**
+ * Include TypoScript for tt_content before static
+ */
+$customFluidContentElementTypoScriptConstants = trim('
+plugin.tx_mwdummy {
+    view {
+        templateRootPath = EXT:mw_dummy/Resources/Private/Templates/
+        partialRootPath = EXT:mw_dummy/Resources/Private/Partials/
+        layoutRootPath = EXT:mw_dummy/Resources/Private/Layouts/
+    }
+}
+');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    $_EXTKEY,
+    'constants',
+    $customFluidContentElementTypoScriptConstants
+);
+
+$customFluidContentElementTypoScriptSetup = trim('
+tt_content.mwdummy_slideshow = COA
+tt_content.mwdummy_slideshow {
+    10 = < lib.stdheader
+    20 = FLUIDTEMPLATE
+    20 {
+        file = {$plugin.tx_mwdummy.view.templateRootPath}CustomElement/Slideshow.html
+        partialRootPath = {$plugin.tx_mwdummy.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_mwdummy.view.layoutRootPath}
+    }
+}
+');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    $_EXTKEY,
+    'setup',
+    $customFluidContentElementTypoScriptSetup,
+    43
+);
+
+$customFluidContentElementTypoScriptSetup = trim('
+tt_content.mwdummy_gallery = COA
+tt_content.mwdummy_gallery {
+    10 = < lib.stdheader
+    20 = FLUIDTEMPLATE
+    20 {
+        file = {$plugin.tx_mwdummy.view.templateRootPath}CustomElement/Gallery.html
+        partialRootPath = {$plugin.tx_mwdummy.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_mwdummy.view.layoutRootPath}
+    }
+}
+');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+    $_EXTKEY,
+    'setup',
+    $customFluidContentElementTypoScriptSetup,
+    43
+);
+
+
+/**
+ * Extension: dce
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/dce/ext_localconf.php
+ */
+
+$_EXTKEY = 'dce';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+/*  | This extension is made for TYPO3 CMS and is licensed
+ *  | under GNU General Public License.
+ *  |
+ *  | (c) 2012-2017 Armin Ruediger Vieweg <armin@v.ieweg.de>
+ */
+
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
+}
+
+$boot = function ($extensionKey) {
+    $extensionPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($extensionKey);
+
+    // AfterSave hook
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['dce'] =
+        'ArminVieweg\\Dce\\Hooks\\AfterSaveHook';
+
+    // ImportExport Hooks
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/impexp/class.tx_impexp.php']['before_setRelation']['dce'] =
+        'ArminVieweg\\Dce\\Hooks\\ImportExportHook->beforeSetRelation';
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/impexp/class.tx_impexp.php']['before_writeRecordsRecords']['dce'] =
+        'ArminVieweg\\Dce\\Hooks\\ImportExportHook->beforeWriteRecordsRecords';
+
+    // PageLayoutView DrawItem Hook for DCE content elements
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['dce'] =
+        'ArminVieweg\\Dce\\Hooks\\PageLayoutViewDrawItemHook';
+
+    // Clear cache hook
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['clearCachePostProc']['dce'] =
+        'ArminVieweg\\Dce\\Hooks\\ClearCachePostHook->clearDceCache';
+
+    // Make edit form access check hook
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/alt_doc.php']['makeEditForm_accessCheck']['dce'] =
+        'ArminVieweg\\Dce\\Hooks\\MakeEditFormAccessCheckHook->checkAccess';
+
+    // Register ke_search hook to be able to index DCE frontend output
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('ke_search')) {
+        $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['ke_search']['modifyContentFromContentElement'][] =
+            'ArminVieweg\\Dce\\Hooks\\KeSearchHook';
+    }
+
+    // DocHeader buttons hook
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['Backend\Template\Components\ButtonBar']['getButtonsHook']['Dce'] =
+        'ArminVieweg\Dce\Hooks\DocHeaderButtonsHook->addDcePopupButton';
+
+    // LiveSearch XClass
+    if (\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_branch) <
+        \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger('8.0.0')
+    ) {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Backend\\Search\\LiveSearch\\LiveSearch'] = [
+            'className' => 'ArminVieweg\Dce\XClass\LiveSearchCompatibility',
+        ];
+    } else {
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Backend\\Search\\LiveSearch\\LiveSearch'] = [
+            'className' => 'ArminVieweg\Dce\XClass\LiveSearch',
+        ];
+    }
+
+    // User conditions
+    require_once($extensionPath . 'Classes/UserConditions/user_dceOnCurrentPage.php');
+
+
+    // Special tce validators (eval)
+    require_once($extensionPath . 'Classes/UserFunction/CustomFieldValidation/AbstractFieldValidator.php');
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']
+    ['ArminVieweg\Dce\UserFunction\CustomFieldValidation\\LowerCamelCaseValidator'] =
+        'EXT:dce/Classes/UserFunction/CustomFieldValidation/LowerCamelCaseValidator.php';
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']
+    ['ArminVieweg\Dce\UserFunction\CustomFieldValidation\\NoLeadingNumberValidator'] =
+        'EXT:dce/Classes/UserFunction/CustomFieldValidation/NoLeadingNumberValidator.php';
+
+
+    // Update Scripts
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['dceMigrateOldNamespacesInFluidTemplateUpdate'] =
+        'ArminVieweg\Dce\Updates\MigrateOldNamespacesInFluidTemplateUpdate';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['dceMigrateDceFieldDatabaseRelationUpdate'] =
+        'ArminVieweg\Dce\Updates\MigrateDceFieldDatabaseRelationUpdate';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['dceMigrateFlexformSheetIdentifierUpdate'] =
+        'ArminVieweg\Dce\Updates\MigrateFlexformSheetIdentifierUpdate';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['dceFixMalformedDceFieldVariableNamesUpdate'] =
+        'ArminVieweg\Dce\Updates\FixMalformedDceFieldVariableNamesUpdate';
+
+
+    // Slot to extend SQL tables definitions
+    /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
+    $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+        'TYPO3\\CMS\\Extbase\\SignalSlot\\Dispatcher'
+    );
+    $signalSlotDispatcher->connect(
+        'TYPO3\CMS\Install\Service\SqlExpectedSchemaService',
+        'tablesDefinitionIsBeingBuilt',
+        'ArminVieweg\Dce\Slots\TablesDefinitionIsBeingBuiltSlot',
+        'extendTtContentTable'
+    );
+
+
+    // Register Plugin to get Dce instance
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'ArminVieweg.' . $extensionKey,
+        'Dce',
+        [
+            'Dce' => 'renderDce'
+        ],
+        [
+            'Dce' => ''
+        ]
+    );
+
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['extbase']['extensions']['Dce']['modules']
+        = $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['extbase']['extensions']['Dce']['plugins'];
+
+    // Include cached ext_localconf
+    if (!\ArminVieweg\Dce\Cache::cacheExists(\ArminVieweg\Dce\Cache::CACHE_TYPE_EXTLOCALCONF)) {
+        /** @var $dceCache \ArminVieweg\Dce\Cache */
+        $dceCache = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('ArminVieweg\Dce\Cache');
+        $dceCache->createLocalconf();
+    }
+    if (\ArminVieweg\Dce\Cache::cacheExists(\ArminVieweg\Dce\Cache::CACHE_TYPE_EXTLOCALCONF)) {
+        require_once(PATH_site . \ArminVieweg\Dce\Cache::CACHE_PATH . \ArminVieweg\Dce\Cache::CACHE_TYPE_EXTLOCALCONF);
+    }
+};
+
+$boot($_EXTKEY);
+unset($boot);
 
 
 #

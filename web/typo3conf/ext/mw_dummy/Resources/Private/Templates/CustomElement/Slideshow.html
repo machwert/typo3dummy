@@ -1,0 +1,40 @@
+{namespace ce = Machwert\MwDummy\ViewHelpers}
+<f:layout name="Default" />
+<f:section name="Main">
+    <ce:slideshow data="{data.tx_mwdummy_directory}" as="images">
+        <f:if condition="{images}">
+            <f:then>
+                <div class="slideshow">
+                    <f:for each="{images}" as="image">
+                        <div><f:image src="{image.publicUrl}" title="" alt="" /></div>
+                    </f:for>
+                </div>
+                <style type="text/css">
+                    .slideshow {
+                        text-align:center;
+                        margin-bottom:40px;
+                    }
+                    .slick-prev:before, .slick-next:before {
+                        z-index:2;
+                        font-size:36px;
+                        color:#dedede;
+                    }
+                    .slick-prev {
+                        left:20px;
+                        z-index:3;
+
+                    }
+                    .slick-next {
+                        right:20px;
+                        z-index:3;
+                    }
+                    .slick-prev, .slick-next {
+                        height:36px;
+                        width:36px;
+                    }
+
+                </style>
+            </f:then>
+        </f:if>
+    </ce:slideshow>
+</f:section>

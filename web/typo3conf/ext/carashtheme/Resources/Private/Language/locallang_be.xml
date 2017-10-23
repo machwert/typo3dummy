@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Strings and labels for the carashtheme extensions</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="carashtheme_title">Slideshow</label>
+			<label index="carashtheme_description">Slideshow with all images from directory</label>
+			<label index="carashtheme_title_gallery">Gallery</label>
+			<label index="carashtheme_description_gallery">Masonry gallery</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="carashtheme_title">Slideshow</label>
+			<label index="carashtheme_description">Slideshow mit allem Bildern eines Verzeichnisses</label>
+			<label index="carashtheme_title_gallery">Gallery</label>
+			<label index="carashtheme_description_gallery">Masonry Galerie</label>
+		</languageKey>
+	</data>
+</T3locallang>

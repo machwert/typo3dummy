@@ -101,6 +101,9 @@ return [
         'reports' => [
             'packagePath' => 'typo3/sysext/reports/',
         ],
+        'scheduler' => [
+            'packagePath' => 'typo3/sysext/scheduler/',
+        ],
         'sv' => [
             'packagePath' => 'typo3/sysext/sv/',
         ],
@@ -115,6 +118,24 @@ return [
         ],
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
+        ],
+        'realurl' => [
+            'packagePath' => 'typo3conf/ext/realurl/',
+        ],
+        'carashtheme' => [
+            'packagePath' => 'typo3conf/ext/carashtheme/',
+        ],
+        'dyncss' => [
+            'packagePath' => 'typo3conf/ext/dyncss/',
+        ],
+        'dyncss_less' => [
+            'packagePath' => 'typo3conf/ext/dyncss_less/',
+        ],
+        'mw_dummy' => [
+            'packagePath' => 'typo3conf/ext/mw_dummy/',
+        ],
+        'dce' => [
+            'packagePath' => 'typo3conf/ext/dce/',
         ],
     ],
     'version' => 5,

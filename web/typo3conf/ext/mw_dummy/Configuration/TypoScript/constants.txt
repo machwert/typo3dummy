@@ -1,0 +1,9 @@
+<INCLUDE_TYPOSCRIPT: source="DIR: ./Library" extensions="txt">
+
+confDir = EXT:mw_dummy/Configuration
+resDir = EXT:mw_dummy/Resources
+dummyResDir = EXT:mw_dummy/Resources
+#customCss = EXT:mw_dummy/Resources/Public/Stylesheets/main_styles.less
+
+## TS MAIN DIRECTORY
+mainDir = 2

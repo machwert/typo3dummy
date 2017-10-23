@@ -2391,32 +2391,77 @@ return array (
             'type' => 'passthrough',
           ),
         ),
+        'tx_realurl_pathsegment' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.tx_realurl_pathsegment',
+          'exclude' => 1,
+          'config' => 
+          array (
+            'type' => 'input',
+            'max' => 255,
+            'eval' => 'trim,nospace,lower,DmitryDulepov\\Realurl\\Evaluator\\SegmentFieldCleaner',
+          ),
+        ),
+        'tx_realurl_pathoverride' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.tx_realurl_path_override',
+          'exclude' => 1,
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled',
+                1 => '',
+              ),
+            ),
+          ),
+        ),
+        'tx_realurl_exclude' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.tx_realurl_exclude',
+          'exclude' => 1,
+          'config' => 
+          array (
+            'type' => 'check',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled',
+                1 => '',
+              ),
+            ),
+          ),
+        ),
       ),
       'types' => 
       array (
         1 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;layout,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.replace;replace,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.links;links,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.caching;caching,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;miscellaneous,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.module;module,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.language;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.palette_title;tx_realurl,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;layout,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.replace;replace,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.links;links,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.caching;caching,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;miscellaneous,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.module;module,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.language;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         3 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.external;external,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;layout,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.links;links,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;miscellaneous,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.language;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.palette_title;tx_realurl,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.external;external,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;layout,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.links;links,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;miscellaneous,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.language;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         4 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcut;shortcut,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcutpage;shortcutpage,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;layout,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.links;links,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;miscellaneous,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.language;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.palette_title;tx_realurl,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcut;shortcut,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcutpage;shortcutpage,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;layout,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.links;links,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;miscellaneous,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.language;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         7 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.mountpoint;mountpoint,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.mountpage;mountpage,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;layout,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.links;links,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;miscellaneous,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.language;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.palette_title;tx_realurl,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.mountpoint;mountpoint,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.mountpage;mountpage,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;layout,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.links;links,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;miscellaneous,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.language;language,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         199 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--palette--;LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.palette_title;tx_realurl,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;visibility,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         254 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;backend_layout,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.module;module,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;adminsonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--palette--;LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.palette_title;tx_realurl,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.layout;backend_layout,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.behaviour,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.module;module,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.config;config,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.miscellaneous;adminsonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         255 => 
         array (
@@ -2552,6 +2597,10 @@ return array (
         'config' => 
         array (
           'showitem' => 'tsconfig_includes;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tsconfig_includes, --linebreak--, TSconfig;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.TSconfig_formlabel',
+        ),
+        'tx_realurl' => 
+        array (
+          'showitem' => 'tx_realurl_pathsegment,--linebreak--,tx_realurl_exclude,tx_realurl_pathoverride',
         ),
       ),
     ),
@@ -7647,36 +7696,47 @@ return array (
             'type' => 'passthrough',
           ),
         ),
+        'tx_realurl_pathsegment' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:pages.tx_realurl_pathsegment',
+          'exclude' => 1,
+          'config' => 
+          array (
+            'type' => 'input',
+            'max' => 255,
+            'eval' => 'trim,nospace,lower,DmitryDulepov\\Realurl\\Evaluator\\SegmentFieldCleaner',
+          ),
+        ),
       ),
       'types' => 
       array (
         1 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,tx_realurl_pathsegment,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.metatags;metatags,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         3 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.external;external,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,tx_realurl_pathsegment,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.external;external,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         4 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcut;shortcut,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcutpage;shortcutpage,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,doktype,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,tx_realurl_pathsegment,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcut;shortcut,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.shortcutpage;shortcutpage,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         7 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;title,tx_realurl_pathsegment,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.metadata,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.abstract;abstract,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.editorial;editorial,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
         ),
         199 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,tx_realurl_pathsegment',
         ),
         254 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.resources,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.media;media,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,tx_realurl_pathsegment',
         ),
         255 => 
         array (
-          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.standard;standard,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.title;titleonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,sys_language_uid,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.visibility;hiddenonly,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,tx_realurl_pathsegment',
         ),
       ),
       'palettes' => 
@@ -8258,6 +8318,7 @@ return array (
           'form_formframework' => 'content-form',
         ),
         'searchFields' => 'header,header_link,subheader,bodytext,pi_flexform',
+        'label_userFunc' => 'ArminVieweg\\Dce\\UserFunction\\CustomLabels\\TtContentLabel->getLabel',
       ),
       'interface' => 
       array (
@@ -8449,6 +8510,24 @@ return array (
                 0 => 'Form',
                 1 => 'form_formframework',
                 2 => 'content-form',
+              ),
+              30 => 
+              array (
+                0 => 'Custom Content Element',
+                1 => 'mwdummy_customcontentelement',
+                2 => 'EXT:mw_dummy/ext_icon.gif',
+              ),
+              31 => 
+              array (
+                0 => 'Slideshow',
+                1 => 'mwdummy_slideshow',
+                2 => 'EXT:mw_dummy/ext_icon.gif',
+              ),
+              32 => 
+              array (
+                0 => 'Gallery',
+                1 => 'mwdummy_gallery',
+                2 => 'EXT:mw_dummy/ext_icon.gif',
               ),
             ),
             'default' => 'text',
@@ -10154,6 +10233,29 @@ return array (
             'type' => 'passthrough',
           ),
         ),
+        'tx_dce_dce' => 
+        array (
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tt_content.tx_dce_dce',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'tx_dce_index' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'tx_dce_new_container' => 
+        array (
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tt_content.tx_dce_new_container',
+          'config' => 
+          array (
+            'type' => 'check',
+          ),
+        ),
       ),
       'types' => 
       array (
@@ -10353,6 +10455,18 @@ return array (
         'form_formframework' => 
         array (
           'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.header;header,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.plugin,pi_flexform,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+        'mwdummy_customcontentelement' => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,--palette--;;language,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,--palette--;;hidden,--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,--div--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_category.tabs.category,categories,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,rowDescription,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+        'mwdummy_gallery' => 
+        array (
+          'showitem' => 'CType,hidden,header,header_layout,header_link,image',
+        ),
+        'mwdummy_slideshow' => 
+        array (
+          'showitem' => 'CType,hidden,header,header_layout,header_link,bodytext;Verzeichnis',
         ),
       ),
       'palettes' => 
@@ -10780,6 +10894,74 @@ return array (
         ),
       ),
     ),
+    'tx_scheduler_task_group' => 
+    array (
+      'ctrl' => 
+      array (
+        'label' => 'groupName',
+        'tstamp' => 'tstamp',
+        'title' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang_tca.xlf:tx_scheduler_task_group',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'delete' => 'deleted',
+        'sortby' => 'sorting',
+        'typeicon_classes' => 
+        array (
+          'default' => 'mimetypes-x-tx_scheduler_task_group',
+        ),
+        'adminOnly' => true,
+        'rootLevel' => 1,
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+        ),
+        'searchFields' => 'groupName',
+      ),
+      'interface' => 
+      array (
+        'showRecordFieldList' => 'hidden,groupName',
+      ),
+      'columns' => 
+      array (
+        'groupName' => 
+        array (
+          'label' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang_tca.xlf:tx_scheduler_task_group.groupName',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 35,
+            'max' => 80,
+            'eval' => 'required,unique,trim',
+            'softref' => 'substitute',
+          ),
+        ),
+        'description' => 
+        array (
+          'label' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang_tca.xlf:tx_scheduler_task_group.description',
+          'config' => 
+          array (
+            'type' => 'text',
+          ),
+        ),
+        'hidden' => 
+        array (
+          'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.disable',
+          'exclude' => true,
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => 0,
+          ),
+        ),
+      ),
+      'types' => 
+      array (
+        1 => 
+        array (
+          'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,groupName,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,hidden,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,description,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+      ),
+    ),
     'sys_note' => 
     array (
       'ctrl' => 
@@ -10887,6 +11069,1527 @@ return array (
         0 => 
         array (
           'showitem' => '--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,category,subject,message,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,personal,--div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended',
+        ),
+      ),
+    ),
+    'tx_realurl_pathdata' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_pathdata',
+        'label' => 'pagepath',
+        'iconfile' => 'EXT:realurl/Resources/Public/Icons/Extension.svg',
+        'hideTable' => 1,
+        'rootLevel' => 1,
+      ),
+      'columns' => 
+      array (
+        'page_id' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_pathdata.page_id',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'int,required',
+          ),
+        ),
+        'rootpage_id' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_pathdata.rootpage_id',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'int,required',
+          ),
+        ),
+        'language_id' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_pathdata.language_id',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'int,required',
+          ),
+        ),
+        'mpvar' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_pathdata.mpvar',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'trim',
+          ),
+        ),
+        'pagepath' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_pathdata.pagepath',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'trim,required',
+          ),
+        ),
+        'expire' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_pathdata.expire',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+            'default' => 0,
+          ),
+        ),
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => '',
+        ),
+      ),
+    ),
+    'tx_realurl_uniqalias' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_uniqalias',
+        'label' => 'value_alias',
+        'iconfile' => 'EXT:realurl/Resources/Public/Icons/Extension.svg',
+        'hideTable' => 1,
+        'rootLevel' => 1,
+      ),
+      'columns' => 
+      array (
+        'expire' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_uniqalias.expire',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+            'default' => 0,
+          ),
+        ),
+        'lang' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_uniqalias.lang',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'int,required',
+            'default' => 0,
+          ),
+        ),
+        'tablename' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_uniqalias.tablename',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'required',
+          ),
+        ),
+        'value_alias' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_uniqalias.value_alias',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'required',
+          ),
+        ),
+        'value_id' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_uniqalias.value_id',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'int,required',
+          ),
+        ),
+        'field_alias' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_uniqalias.field_alias',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'required',
+          ),
+        ),
+        'field_id' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_uniqalias.field_id',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'required',
+          ),
+        ),
+      ),
+      'types' => 
+      array (
+        'types' => 
+        array (
+          0 => 
+          array (
+            'showitem' => '',
+          ),
+        ),
+      ),
+    ),
+    'tx_realurl_urldata' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_urldata',
+        'label' => 'speaking_url',
+        'iconfile' => 'EXT:realurl/Resources/Public/Icons/Extension.svg',
+        'hideTable' => 1,
+        'rootLevel' => 1,
+      ),
+      'columns' => 
+      array (
+        'page_id' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_urldata.page_id',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'int,required',
+          ),
+        ),
+        'rootpage_id' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_urldata.rootpage_id',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'int,required',
+          ),
+        ),
+        'original_url' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_urldata.original_url',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'trim,required',
+          ),
+        ),
+        'speaking_url' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_urldata.speaking_url',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'trim,required',
+          ),
+        ),
+        'request_variables' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_urldata.request_variables',
+          'config' => 
+          array (
+            'type' => 'input',
+          ),
+        ),
+        'expire' => 
+        array (
+          'label' => 'LLL:EXT:realurl/Resources/Private/Language/locallang_db.xlf:tx_realurl_urldata.expire',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputDateTime',
+            'eval' => 'datetime',
+            'default' => 0,
+          ),
+        ),
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => '',
+        ),
+      ),
+    ),
+    'tx_dce_domain_model_dce' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce',
+        'label' => 'title',
+        'adminOnly' => 1,
+        'rootLevel' => 1,
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'dividers2tabs' => true,
+        'versioningWS' => true,
+        'origUid' => 't3_origuid',
+        'delete' => 'deleted',
+        'sortby' => 'sorting',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+          'starttime' => 'starttime',
+          'endtime' => 'endtime',
+        ),
+        'iconfile' => 'EXT:dce/Resources/Public/Icons/ext_icon.png',
+        'copyAfterDuplFields' => 'fields',
+      ),
+      'interface' => 
+      array (
+        'showRecordFieldList' => 'hidden,title,type',
+      ),
+      'types' => 
+      array (
+        1 => 
+        array (
+          'showitem' => '--palette--;;general_header,fields,--div--;LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.template,template_type,template_content,template_file,--div--;LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.container,enable_container,container_item_limit,container_identifier,container_template_type,container_template,container_template_file,--div--;LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.backendTemplate,use_simple_backend_view,backend_view_header,backend_view_bodytext,backend_template_type,backend_template_content,backend_template_file,--div--;LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.wizard,wizard_icon,wizard_custom_icon,wizard_enable,wizard_category,wizard_description,--div--;LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.detailpage,enable_detailpage,detailpage_identifier,detailpage_template_type,detailpage_template,detailpage_template_file,--div--;LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.miscellaneous,cache_dce,flexform_label,hide_default_ce_wrap,--palette--;LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.contentRelationsPalette;content_relations,palette_fields,template_layout_root_path,template_partial_root_path',
+          'columnsOverrides' => 
+          array (
+            'template_content' => 
+            array (
+              'config' => 
+              array (
+                'fixedFont' => true,
+                'enableTabulator' => true,
+              ),
+            ),
+          ),
+        ),
+      ),
+      'palettes' => 
+      array (
+        'general_header' => 
+        array (
+          'showitem' => 'title,hidden',
+          'canNotCollapse' => true,
+        ),
+        'content_relations' => 
+        array (
+          'showitem' => 'show_access_tab,show_media_tab,show_category_tab',
+          'canNotCollapse' => true,
+        ),
+      ),
+      'columns' => 
+      array (
+        'sys_language_uid' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'foreign_table' => 'sys_language',
+            'foreign_table_where' => 'ORDER BY sys_language.title',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:lang/locallang_general.xml:LGL.allLanguages',
+                1 => -1,
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:lang/locallang_general.xml:LGL.default_value',
+                1 => 0,
+              ),
+            ),
+          ),
+        ),
+        'l10n_parent' => 
+        array (
+          'displayCond' => 'FIELD:sys_language_uid:>:0',
+          'exclude' => 1,
+          'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => 0,
+              ),
+            ),
+            'foreign_table' => 'tx_dce_domain_model_dce',
+            'foreign_table_where' => 'AND tx_dce_domain_model_dce.pid=###CURRENT_PID### AND tx_dce_domain_model_dce.sys_language_uid IN (-1,0)',
+          ),
+        ),
+        'l10n_diffsource' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        't3ver_label' => 
+        array (
+          'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.versionLabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'max' => 255,
+          ),
+        ),
+        'hidden' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.hidden',
+          'config' => 
+          array (
+            'type' => 'check',
+          ),
+        ),
+        'title' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 15,
+            'eval' => 'trim,required',
+          ),
+        ),
+        'fields' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.fields',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'foreign_table' => 'tx_dce_domain_model_dcefield',
+            'foreign_sortby' => 'sorting',
+            'foreign_field' => 'parent_dce',
+            'minitems' => 0,
+            'maxitems' => 999,
+            'appearance' => 
+            array (
+              'collapseAll' => 1,
+              'expandSingle' => 1,
+              'levelLinksPosition' => 'bottom',
+              'useSortable' => 1,
+              'showPossibleLocalizationRecords' => 1,
+              'showRemovedLocalizationRecords' => 1,
+              'showAllLocalizationLink' => 1,
+              'showSynchronizationLink' => 1,
+              'enabledControls' => 
+              array (
+                'info' => false,
+                'dragdrop' => true,
+                'sort' => true,
+              ),
+            ),
+          ),
+        ),
+        'wizard_enable' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.wizardEnable',
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => true,
+          ),
+          'onChange' => 'reload',
+        ),
+        'wizard_category' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.wizardCategory',
+          'displayCond' => 'FIELD:wizard_enable:REQ:true',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce',
+                1 => '--div--',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce_long',
+                1 => 'dce',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:typo3_default_categories',
+                1 => '--div--',
+              ),
+              3 => 
+              array (
+                0 => 'LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:common',
+                1 => 'common',
+              ),
+              4 => 
+              array (
+                0 => 'LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:special',
+                1 => 'special',
+              ),
+              5 => 
+              array (
+                0 => 'LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:forms',
+                1 => 'forms',
+              ),
+              6 => 
+              array (
+                0 => 'LLL:EXT:backend/Resources/Private/Language/locallang_db_new_content_el.xlf:plugins',
+                1 => 'plugins',
+              ),
+            ),
+          ),
+        ),
+        'wizard_description' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.wizardDescription',
+          'displayCond' => 'FIELD:wizard_enable:REQ:true',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim',
+          ),
+        ),
+        'wizard_icon' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.wizardIcon',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'minitems' => 1,
+            'maxitems' => 1,
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-header',
+                1 => 'content-header',
+                2 => 'content-header',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-textpic',
+                1 => 'content-textpic',
+                2 => 'content-textpic',
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-bullets',
+                1 => 'content-bullets',
+                2 => 'content-bullets',
+              ),
+              3 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-table',
+                1 => 'content-table',
+                2 => 'content-table',
+              ),
+              4 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-special-uploads',
+                1 => 'content-special-uploads',
+                2 => 'content-special-uploads',
+              ),
+              5 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-special-menu',
+                1 => 'content-special-menu',
+                2 => 'content-special-menu',
+              ),
+              6 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-special-html',
+                1 => 'content-special-html',
+                2 => 'content-special-html',
+              ),
+              7 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-special-div',
+                1 => 'content-special-div',
+                2 => 'content-special-div',
+              ),
+              8 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-special-shortcut',
+                1 => 'content-special-shortcut',
+                2 => 'content-special-shortcut',
+              ),
+              9 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-elements-login',
+                1 => 'content-elements-login',
+                2 => 'content-elements-login',
+              ),
+              10 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-elements-mailform',
+                1 => 'content-elements-mailform',
+                2 => 'content-elements-mailform',
+              ),
+              11 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.content-plugin',
+                1 => 'content-plugin',
+                2 => 'content-plugin',
+              ),
+              12 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.custom',
+                1 => '--div--',
+              ),
+              13 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:wizardIcon.customIcon',
+                1 => 'custom',
+              ),
+            ),
+            'fieldWizard' => 
+            array (
+              'selectIcons' => 
+              array (
+                'disabled' => false,
+              ),
+            ),
+          ),
+          'onChange' => 'reload',
+        ),
+        'wizard_custom_icon' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.wizardCustomIcon',
+          'displayCond' => 'FIELD:wizard_icon:IN:custom',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'required',
+          ),
+        ),
+        'template_type' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType.inline',
+                1 => 'inline',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType.file',
+                1 => 'file',
+              ),
+            ),
+          ),
+          'onChange' => 'reload',
+        ),
+        'template_content' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateContent',
+          'displayCond' => 'FIELD:template_type:!IN:file',
+          'config' => 
+          array (
+            'type' => 'user',
+            'size' => '30',
+            'userFunc' => 'ArminVieweg\\Dce\\UserFunction\\UserFields\\CodemirrorField->getCodemirrorField',
+            'parameters' => 
+            array (
+              'mode' => 'htmlmixed',
+              'showTemplates' => false,
+            ),
+            'default' => '{namespace dce=ArminVieweg\\Dce\\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+	Your template goes here...
+</f:section>',
+          ),
+        ),
+        'template_file' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateFile',
+          'displayCond' => 'FIELD:template_type:IN:file',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputLink',
+            'size' => 30,
+            'eval' => 'required',
+            'fieldControl' => 
+            array (
+              'linkPopup' => 
+              array (
+                'options' => 
+                array (
+                  'blindLinkOptions' => 'page,folder,url,mail,spec',
+                  'blindLinkFields' => 'title,target,class,params',
+                ),
+              ),
+            ),
+          ),
+        ),
+        'cache_dce' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.cacheDce',
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => '1',
+          ),
+        ),
+        'show_access_tab' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.showAccessTab',
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => '0',
+          ),
+        ),
+        'show_category_tab' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.showCategoryTab',
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => '0',
+          ),
+        ),
+        'show_media_tab' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.showMediaTab',
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => '0',
+          ),
+        ),
+        'flexform_label' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.flexformLabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'trim,required',
+            'default' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.flexformLabel.default',
+            'size' => 30,
+          ),
+        ),
+        'use_simple_backend_view' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.useSimpleBackendView',
+          'config' => 
+          array (
+            'type' => 'check',
+            'default' => '1',
+          ),
+          'onChange' => 'reload',
+        ),
+        'backend_view_header' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.backendViewHeader',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'itemsProcFunc' => 'ArminVieweg\\Dce\\UserFunction\\ItemsProcFunc->getDceFields',
+            'size' => 1,
+            'minitems' => 0,
+            'maxitems' => 1,
+          ),
+          'displayCond' => 'FIELD:use_simple_backend_view:=:1',
+          'onChange' => 'reload',
+        ),
+        'backend_view_bodytext' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.backendViewBodytext',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectMultipleSideBySide',
+            'itemsProcFunc' => 'ArminVieweg\\Dce\\UserFunction\\ItemsProcFunc->getDceFields',
+            'size' => 5,
+            'minitems' => 0,
+            'maxitems' => 15,
+          ),
+          'displayCond' => 'FIELD:use_simple_backend_view:=:1',
+        ),
+        'backend_template_type' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.backendTemplateType',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.backendTemplateType.inline',
+                1 => 'inline',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.backendTemplateType.file',
+                1 => 'file',
+              ),
+            ),
+          ),
+          'displayCond' => 'FIELD:use_simple_backend_view:!=:1',
+          'onChange' => 'reload',
+        ),
+        'backend_template_content' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.backendTemplateContent',
+          'displayCond' => 
+          array (
+            'AND' => 
+            array (
+              0 => 'FIELD:use_simple_backend_view:!=:1',
+              1 => 'FIELD:backend_template_type:!IN:file',
+            ),
+          ),
+          'config' => 
+          array (
+            'type' => 'user',
+            'size' => '30',
+            'userFunc' => 'ArminVieweg\\Dce\\UserFunction\\UserFields\\CodemirrorField->getCodemirrorField',
+            'parameters' => 
+            array (
+              'mode' => 'htmlmixed',
+              'showTemplates' => false,
+            ),
+            'default' => '
+{namespace dce=ArminVieweg\\Dce\\ViewHelpers}
+<f:layout name="BackendTemplate" />
+
+<f:section name="header">
+	<strong>{dce.title}</strong><br>
+</f:section>
+<f:section name="bodytext">
+	Your backend template goes here...
+</f:section>',
+          ),
+        ),
+        'backend_template_file' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.backendTemplateFile',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputLink',
+            'size' => 30,
+            'eval' => 'required',
+            'fieldControl' => 
+            array (
+              'linkPopup' => 
+              array (
+                'options' => 
+                array (
+                  'blindLinkOptions' => 'page,folder,url,mail,spec',
+                  'blindLinkFields' => 'title,target,class,params',
+                ),
+              ),
+            ),
+          ),
+          'displayCond' => 
+          array (
+            'AND' => 
+            array (
+              0 => 'FIELD:use_simple_backend_view:!=:1',
+              1 => 'FIELD:backend_template_type:IN:file',
+            ),
+          ),
+        ),
+        'template_layout_root_path' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.layoutRootPath',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'trim,required',
+            'default' => 'EXT:dce/Resources/Private/Layouts/',
+          ),
+        ),
+        'template_partial_root_path' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.partialRootPath',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'trim,required',
+            'default' => 'EXT:dce/Resources/Private/Partials/',
+          ),
+        ),
+        'enable_detailpage' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.enableDetailpage',
+          'config' => 
+          array (
+            'type' => 'check',
+          ),
+          'onChange' => 'reload',
+        ),
+        'detailpage_identifier' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.detailpageIdentifier',
+          'displayCond' => 'FIELD:enable_detailpage:=:1',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'eval' => 'trim,is_in',
+            'is_in' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890_-',
+            'default' => 'detailDceUid',
+          ),
+        ),
+        'detailpage_template_type' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType',
+          'displayCond' => 'FIELD:enable_detailpage:=:1',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType.inline',
+                1 => 'inline',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType.file',
+                1 => 'file',
+              ),
+            ),
+          ),
+          'onChange' => 'reload',
+        ),
+        'detailpage_template' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.detailpageTemplate',
+          'displayCond' => 
+          array (
+            'AND' => 
+            array (
+              0 => 'FIELD:enable_detailpage:=:1',
+              1 => 'FIELD:detailpage_template_type:!IN:file',
+            ),
+          ),
+          'config' => 
+          array (
+            'type' => 'user',
+            'size' => '30',
+            'userFunc' => 'ArminVieweg\\Dce\\UserFunction\\UserFields\\CodemirrorField->getCodemirrorField',
+            'parameters' => 
+            array (
+              'mode' => 'htmlmixed',
+              'showTemplates' => false,
+            ),
+            'default' => '{namespace dce=ArminVieweg\\Dce\\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+	Your detailpage template goes here...
+</f:section>',
+          ),
+        ),
+        'detailpage_template_file' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.detailpageTemplateFile',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputLink',
+            'size' => 30,
+            'eval' => 'required',
+            'fieldControl' => 
+            array (
+              'linkPopup' => 
+              array (
+                'options' => 
+                array (
+                  'blindLinkOptions' => 'page,folder,url,mail,spec',
+                  'blindLinkFields' => 'title,target,class,params',
+                ),
+              ),
+            ),
+          ),
+          'displayCond' => 
+          array (
+            'AND' => 
+            array (
+              0 => 'FIELD:enable_detailpage:=:1',
+              1 => 'FIELD:detailpage_template_type:IN:file',
+            ),
+          ),
+        ),
+        'enable_container' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.enableContainer',
+          'config' => 
+          array (
+            'type' => 'check',
+          ),
+          'onChange' => 'reload',
+        ),
+        'container_item_limit' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.containerItemLimit',
+          'displayCond' => 'FIELD:enable_container:=:1',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'num',
+            'default' => 0,
+            'size' => 2,
+          ),
+        ),
+        'container_template_type' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType',
+          'displayCond' => 'FIELD:enable_container:=:1',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType.inline',
+                1 => 'inline',
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.templateType.file',
+                1 => 'file',
+              ),
+            ),
+          ),
+          'onChange' => 'reload',
+        ),
+        'container_template' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.containerTemplate',
+          'displayCond' => 
+          array (
+            'AND' => 
+            array (
+              0 => 'FIELD:enable_container:=:1',
+              1 => 'FIELD:container_template_type:!IN:file',
+            ),
+          ),
+          'config' => 
+          array (
+            'type' => 'user',
+            'size' => '30',
+            'userFunc' => 'ArminVieweg\\Dce\\UserFunction\\UserFields\\CodemirrorField->getCodemirrorField',
+            'parameters' => 
+            array (
+              'mode' => 'htmlmixed',
+              'doNotShowFields' => true,
+            ),
+            'default' => '{namespace dce=ArminVieweg\\Dce\\ViewHelpers}
+<f:layout name="DefaultContainer" />
+
+<f:section name="main">
+	<f:render partial="Container/Dces" arguments="{dces:dces}" />
+</f:section>',
+          ),
+        ),
+        'container_template_file' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.containerTemplateFile',
+          'config' => 
+          array (
+            'type' => 'input',
+            'renderType' => 'inputLink',
+            'size' => 30,
+            'eval' => 'required',
+            'fieldControl' => 
+            array (
+              'linkPopup' => 
+              array (
+                'options' => 
+                array (
+                  'blindLinkOptions' => 'page,folder,url,mail,spec',
+                  'blindLinkFields' => 'title,target,class,params',
+                ),
+              ),
+            ),
+          ),
+          'displayCond' => 
+          array (
+            'AND' => 
+            array (
+              0 => 'FIELD:enable_container:=:1',
+              1 => 'FIELD:container_template_type:IN:file',
+            ),
+          ),
+        ),
+        'palette_fields' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dce.paletteFields',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectMultipleSideBySide',
+            'itemsProcFunc' => 'ArminVieweg\\Dce\\UserFunction\\ItemsProcFunc->getAvailableTtContentColumnsForPaletteFields',
+            'size' => 10,
+            'default' => 'sys_language_uid,l18n_parent,colPos,spaceBefore,spaceAfter,section_frame,hidden',
+            'minitems' => 0,
+            'maxitems' => 999,
+          ),
+        ),
+      ),
+    ),
+    'tx_dce_domain_model_dcefield' => 
+    array (
+      'ctrl' => 
+      array (
+        'title' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield',
+        'label' => 'title',
+        'label_userFunc' => 'ArminVieweg\\Dce\\UserFunction\\CustomLabels\\DceFieldLabel->getLabel',
+        'hideTable' => true,
+        'adminOnly' => true,
+        'rootLevel' => true,
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'dividers2tabs' => true,
+        'versioningWS' => true,
+        'origUid' => 't3_origuid',
+        'delete' => 'deleted',
+        'sortby' => 'sorting',
+        'enablecolumns' => 
+        array (
+          'disabled' => 'hidden',
+          'starttime' => 'starttime',
+          'endtime' => 'endtime',
+        ),
+        'type' => 'type',
+        'typeicon_column' => 'type',
+        'typeicon_classes' => 
+        array (
+          0 => 'ext-dce-dcefield-type-element',
+          1 => 'ext-dce-dcefield-type-tab',
+          2 => 'ext-dce-dcefield-type-section',
+        ),
+      ),
+      'interface' => 
+      array (
+        'showRecordFieldList' => 'hidden,title,type,variable',
+      ),
+      'types' => 
+      array (
+        0 => 
+        array (
+          'showitem' => '--palette--;;general_header,configuration,--palette--;;tca_options,parent_dce,parent_field',
+          'columnsOverrides' => 
+          array (
+            'configuration' => 
+            array (
+              'config' => 
+              array (
+                'fixedFont' => true,
+                'enableTabulator' => true,
+              ),
+            ),
+          ),
+        ),
+        1 => 
+        array (
+          'showitem' => '--palette--;;general_header,parent_dce',
+        ),
+        2 => 
+        array (
+          'showitem' => '--palette--;;general_header,section_fields_tag,section_fields,parent_dce',
+        ),
+      ),
+      'palettes' => 
+      array (
+        'general_header' => 
+        array (
+          'showitem' => 'type,title,variable,hidden',
+          'canNotCollapse' => true,
+        ),
+        'tca_options' => 
+        array (
+          'showitem' => 'map_to,new_tca_field_name,new_tca_field_type',
+          'canNotCollapse' => true,
+        ),
+      ),
+      'columns' => 
+      array (
+        'sys_language_uid' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.language',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'foreign_table' => 'sys_language',
+            'foreign_table_where' => 'ORDER BY sys_language.title',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:lang/locallang_general.xml:LGL.allLanguages',
+                1 => -1,
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:lang/locallang_general.xml:LGL.default_value',
+                1 => 0,
+              ),
+            ),
+          ),
+        ),
+        'l10n_parent' => 
+        array (
+          'displayCond' => 'FIELD:sys_language_uid:>:0',
+          'exclude' => 1,
+          'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.l18n_parent',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => '',
+                1 => 0,
+              ),
+            ),
+            'foreign_table' => 'tx_dce_domain_model_dcefield',
+            'foreign_table_where' => 'AND tx_dce_domain_model_dcefield.pid=###CURRENT_PID### AND tx_dce_domain_model_dcefield.sys_language_uid IN (-1,0)',
+          ),
+        ),
+        'l10n_diffsource' => 
+        array (
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        't3ver_label' => 
+        array (
+          'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.versionLabel',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 30,
+            'max' => 255,
+          ),
+        ),
+        'hidden' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.hidden',
+          'config' => 
+          array (
+            'type' => 'check',
+          ),
+        ),
+        'sorting' => 
+        array (
+          'label' => 'Sorting',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'starttime' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.starttime',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 13,
+            'eval' => 'datetime',
+            'checkbox' => 0,
+            'default' => 0,
+            'range' => 
+            array (
+              'lower' => 1508709600,
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+            'renderType' => 'inputDateTime',
+          ),
+        ),
+        'endtime' => 
+        array (
+          'exclude' => 1,
+          'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.endtime',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 13,
+            'eval' => 'datetime',
+            'checkbox' => 0,
+            'default' => 0,
+            'range' => 
+            array (
+              'lower' => 1508709600,
+            ),
+            'behaviour' => 
+            array (
+              'allowLanguageSynchronization' => true,
+            ),
+            'renderType' => 'inputDateTime',
+          ),
+        ),
+        'type' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.type',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => 
+            array (
+              0 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.type.element',
+                1 => 0,
+              ),
+              1 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.type.tab',
+                1 => 1,
+              ),
+              2 => 
+              array (
+                0 => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.type.section',
+                1 => 2,
+              ),
+            ),
+          ),
+          'displayCond' => 'FIELD:parent_field:=:0',
+          'onChange' => 'reload',
+        ),
+        'title' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.title',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 15,
+            'eval' => 'trim,required',
+          ),
+        ),
+        'variable' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.variable',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 15,
+            'eval' => 'trim,required,is_in,ArminVieweg\\Dce\\UserFunction\\CustomFieldValidation\\NoLeadingNumberValidator,ArminVieweg\\Dce\\UserFunction\\CustomFieldValidation\\LowerCamelCaseValidator',
+            'is_in' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890_',
+          ),
+        ),
+        'configuration' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.configuration',
+          'config' => 
+          array (
+            'type' => 'user',
+            'size' => '30',
+            'userFunc' => 'ArminVieweg\\Dce\\UserFunction\\UserFields\\CodemirrorField->getCodemirrorField',
+            'parameters' => 
+            array (
+              'mode' => 'xml',
+              'showTemplates' => true,
+            ),
+          ),
+        ),
+        'map_to' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.mapTo',
+          'config' => 
+          array (
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'itemsProcFunc' => 'ArminVieweg\\Dce\\UserFunction\\ItemsProcFunc->getAvailableTtContentColumnsForTcaMapping',
+            'size' => 1,
+            'minitems' => 0,
+            'maxitems' => 1,
+          ),
+          'displayCond' => 'FIELD:parent_field:=:0',
+          'onChange' => 'reload',
+        ),
+        'new_tca_field_name' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.newTcaFieldName',
+          'config' => 
+          array (
+            'type' => 'input',
+            'eval' => 'trim,required,lower',
+          ),
+          'displayCond' => 
+          array (
+            'AND' => 
+            array (
+              0 => 'FIELD:parent_field:=:0',
+              1 => 'FIELD:map_to:=:*newcol',
+            ),
+          ),
+        ),
+        'new_tca_field_type' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.newTcaFieldType',
+          'config' => 
+          array (
+            'type' => 'input',
+            'default' => 'auto',
+            'eval' => 'trim,required',
+          ),
+          'displayCond' => 
+          array (
+            'AND' => 
+            array (
+              0 => 'FIELD:parent_field:=:0',
+              1 => 'FIELD:map_to:=:*newcol',
+            ),
+          ),
+        ),
+        'section_fields' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.section_fields',
+          'config' => 
+          array (
+            'type' => 'inline',
+            'foreign_table' => 'tx_dce_domain_model_dcefield',
+            'foreign_sortby' => 'sorting',
+            'foreign_field' => 'parent_field',
+            'minitems' => 0,
+            'maxitems' => 999,
+            'appearance' => 
+            array (
+              'collapseAll' => 0,
+              'expandSingle' => 0,
+              'levelLinksPosition' => 'bottom',
+              'useSortable' => 1,
+              'showPossibleLocalizationRecords' => 1,
+              'showRemovedLocalizationRecords' => 1,
+              'showAllLocalizationLink' => 1,
+              'showSynchronizationLink' => 1,
+              'enabledControls' => 
+              array (
+                'info' => false,
+                'dragdrop' => true,
+                'sort' => true,
+              ),
+            ),
+            'overrideChildTca' => 
+            array (
+              'columns' => 
+              array (
+                'parent_field' => 
+                array (
+                  'config' => 
+                  array (
+                    'default' => -1,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        'section_fields_tag' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.section_fields_tag',
+          'config' => 
+          array (
+            'type' => 'input',
+            'size' => 15,
+            'eval' => 'trim,required',
+          ),
+        ),
+        'parent_dce' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.parent_dce',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+          ),
+        ),
+        'parent_field' => 
+        array (
+          'exclude' => 0,
+          'label' => 'LLL:EXT:dce/Resources/Private/Language/locallang_db.xml:tx_dce_domain_model_dcefield.parent_field',
+          'config' => 
+          array (
+            'type' => 'passthrough',
+            'default' => 0,
+          ),
         ),
       ),
     ),

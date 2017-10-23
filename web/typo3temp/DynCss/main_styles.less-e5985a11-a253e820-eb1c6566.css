@@ -1,0 +1,25 @@
+body {
+  background-color: red;
+}
+.offcanvas {
+  position: fixed;
+  left: 0px;
+  width: 200px;
+  background-color: #dedede;
+  height: 100%;
+}
+.header ul.topnav li {
+  display: block;
+}
+.header ul.topnav li {
+  width: 100%;
+}
+.menu-icon {
+  width: 50px;
+  display: block;
+  float: left;
+}
+.menu-text {
+  display: block;
+  float: left;
+}

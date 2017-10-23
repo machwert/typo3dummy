@@ -1,0 +1,86 @@
+{namespace ce = Machwert\MwDummy\ViewHelpers}
+<f:layout name="Default" />
+<f:section name="Main">
+    <ce:fal data="{data}" as="images">
+        <f:if condition="{images}">
+            <div class="masonrygrid">
+                <div class="grid-sizer"></div>
+                <f:for each="{images}" as="image">
+                    <div class="grid-item">
+                        <a data-rel="cbox[{uid}]" class="t3colorbox cboxElement" href="{image.publicUrl}">
+                            <f:image src="{image.publicUrl}" id="I{image.uid}" title="{image.title}" alt="{image.alternative}" />
+                        </a>
+                        <f:if condition="{0:image.description,1:image.link} == {0: '', 1: ''}">
+                            <f:else>
+                                <div class="subimage">
+                                    <f:if condition="{image.description}">
+                                        <div class="caption">{image.description}</div>
+                                    </f:if>
+                                    <f:if condition="{image.link}">
+                                        <div class="imagelink"><a href="{image.link}" target="_blank">{image.link}</a></div>
+                                    </f:if>
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </div>
+                </f:for>
+            </div>
+            <style type="text/css">
+                .grid-sizer {
+                    width:20%;
+                }
+                .grid-item {
+                    width:20%;
+                    height: auto;
+                    float: left;
+                    margin-bottom:2px;
+                }
+                .subimage {
+                    border-bottom-left-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                    font-size: 11px;
+                    margin-left:1px;
+                    margin-right:2px;
+                    margin-bottom:8px;
+                    border-left: 1px solid #e7e7e7;
+                    border-right: 1px solid #e7e7e7;
+                    border-bottom: 1px solid #e7e7e7;
+                    box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.22)
+                }
+                .subimage .caption {
+                    padding: 5px 12px;
+                    color:#333;
+                }
+                .subimage .imagelink {
+                    border-top: 1px solid #e7e7e7;
+                    padding: 5px 12px;
+                }
+                .main-section .grid-item img {
+                    height:auto
+                    border-left:2px solid #ffffff;
+                    border-right:2px solid #ffffff;
+                }
+                @media screen and (max-width: 1300px) {
+                    .grid-sizer,.grid-item {
+                        width:25%;
+                    }
+                }
+                @media screen and (max-width: 1050px) {
+                    .grid-sizer,.grid-item {
+                        width:33%;
+                    }
+                }
+                @media screen and (max-width: 800px) {
+                    .grid-sizer,.grid-item {
+                        width:50%;
+                    }
+                }
+                @media screen and (max-width: 500px) {
+                    .grid-sizer,.grid-item {
+                        width:100%;
+                    }
+                }
+            </style>
+        </f:if>
+    </ce:fal>
+</f:section>

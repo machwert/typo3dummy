@@ -1,0 +1,39 @@
+body {
+  background-color: red;
+}
+.offcanvas {
+  position: fixed;
+  left: 0px;
+  width: 320px;
+  background-color: #dedede;
+  height: 100%;
+  padding-top: 5%;
+  transition: width 1s;
+}
+.offcanvas:hover {
+  width: 320px;
+}
+/*
+.menu-text {
+  display:none;
+}
+*/
+.offcanvas:hover .menu-text {
+  display: table-cell;
+}
+.header ul.topnav {
+  display: table;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+}
+.header ul.topnav li {
+  display: table-row;
+}
+.header ul.topnav li {
+  width: 100%;
+}
+.menu-icon {
+  width: 40px;
+  display: table-cell;
+}

@@ -1035,6 +1035,40 @@ if (TYPO3_MODE === 'BE') {
 }
 
 /**
+ * Extension: scheduler
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3/sysext/scheduler/ext_tables.php
+ */
+
+$_EXTKEY = 'scheduler';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') or die();
+
+if (TYPO3_MODE === 'BE') {
+    // Add module
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModule(
+        'system',
+        'txschedulerM1',
+        '',
+        '',
+        [
+            'routeTarget' => \TYPO3\CMS\Scheduler\Controller\SchedulerModuleController::class . '::mainAction',
+            'access' => 'admin',
+            'name' => 'system_txschedulerM1',
+            'icon' => 'EXT:scheduler/Resources/Public/Icons/module-scheduler.svg',
+            'labels' => 'LLL:EXT:scheduler/Resources/Private/Language/locallang_mod.xlf'
+        ]
+    );
+
+    // Add context sensitive help (csh) to the backend module
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+        '_MOD_system_txschedulerM1',
+        'EXT:scheduler/Resources/Private/Language/locallang_csh_scheduler.xlf'
+    );
+}
+
+/**
  * Extension: sv
  * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3/sysext/sv/ext_tables.php
  */
@@ -1151,5 +1185,231 @@ if (TYPO3_MODE === 'BE' && !(TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_INSTALL)) {
         ]
     );
 }
+
+/**
+ * Extension: realurl
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/realurl/ext_tables.php
+ */
+
+$_EXTKEY = 'realurl';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+// Backend module is available only in TYPO3 7.6 or newer
+if (version_compare(TYPO3_version, '7.6.0', '>=')) {
+	$realurlConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['realurl'];
+	if (is_string($realurlConfiguration)) {
+		$realurlConfiguration = (array)@unserialize($realurlConfiguration);
+	}
+	else {
+		$realurlConfiguration = array();
+	}
+
+	$realurlModuleIcon = ((!isset($realurlConfiguration['moduleIcon']) || $realurlConfiguration['moduleIcon'] == 0) ? 'Module.svg' :
+		($realurlConfiguration['moduleIcon'] == 1 ? 'Module2.svg' : 'Module3.svg')
+	);
+
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+		'DmitryDulepov.Realurl',
+		'web',
+		'realurl',
+		'',
+		array(
+			'Overview' => 'index',
+			'Aliases' => 'index,edit,delete,deleteAll',
+			'UrlCache' => 'index,delete,deleteAll,flush',
+			'PathCache' => 'index,delete',
+		),
+		array(
+			'access' => 'user,group',
+			'icon' => 'EXT:realurl/Resources/Public/Icons/' . $realurlModuleIcon,
+			'labels' => 'LLL:EXT:realurl/Resources/Private/Language/locallang.xlf',
+		)
+	);
+
+	unset($realurlConfiguration, $realurlModuleIcon);
+}
+
+/**
+ * Extension: carashtheme
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/carashtheme/ext_tables.php
+ */
+
+$_EXTKEY = 'carashtheme';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if(!defined ('TYPO3_MODE')){
+    die('Access denied.');
+}
+
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'cara.SH Theme');
+
+/**
+ * Extension: dyncss
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/dyncss/ext_tables.php
+ */
+
+$_EXTKEY = 'dyncss';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+defined('TYPO3_MODE') || die('Access denied.');
+call_user_func(
+    function ($extKey) {
+        // Add/register icons
+        if (TYPO3_MODE === 'BE') {
+            // register svg icons: identifier and filename
+            $iconsSvg = [
+                'actions-system-cache-clear-dyncss' => 'actions-system-cache-clear-dyncss.svg'
+            ];
+            $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+            foreach ($iconsSvg as $identifier => $path) {
+                $iconRegistry->registerIcon(
+                    $identifier,
+                    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    ['source' => 'EXT:' . $extKey . '/Resources/Public/Icons/' . $path]
+                );
+            }
+        }
+    },
+    $_EXTKEY
+);
+
+/**
+ * Extension: mw_dummy
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/mw_dummy/ext_tables.php
+ */
+
+$_EXTKEY = 'mw_dummy';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+if(!defined ('TYPO3_MODE')){
+    die('Access denied.');
+}
+
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+$iconRegistry->registerIcon(
+    'icon_mw_dummy_slideshow',
+    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+    ['source' => 'EXT:mw_dummy/Resources/Public/Icons/slideshow.svg']
+);
+
+$iconRegistry->registerIcon(
+    'icon_mw_dummy_gallery',
+    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+    ['source' => 'EXT:mw_dummy/Resources/Public/Icons/gallery.svg']
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'machwert Dummy');
+
+/**
+ * Extension: dce
+ * File: /Applications/MAMP/htdocs/typo3dummy/web/typo3conf/ext/dce/ext_tables.php
+ */
+
+$_EXTKEY = 'dce';
+$_EXTCONF = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY];
+
+
+
+/*  | This extension is made for TYPO3 CMS and is licensed
+ *  | under GNU General Public License.
+ *  |
+ *  | (c) 2012-2017 Armin Ruediger Vieweg <armin@v.ieweg.de>
+ */
+
+if (!defined('TYPO3_MODE')) {
+    die('Access denied.');
+}
+
+$boot = function ($extensionKey) {
+    // Include cached ext_tables
+    if (!\ArminVieweg\Dce\Cache::cacheExists(\ArminVieweg\Dce\Cache::CACHE_TYPE_EXTTABLES)) {
+        /** @var $dceCache \ArminVieweg\Dce\Cache */
+        $dceCache = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('ArminVieweg\Dce\Cache');
+        $dceCache->createExtTables();
+    }
+    if (\ArminVieweg\Dce\Cache::cacheExists(\ArminVieweg\Dce\Cache::CACHE_TYPE_EXTTABLES)) {
+        require_once(PATH_site . \ArminVieweg\Dce\Cache::CACHE_PATH . \ArminVieweg\Dce\Cache::CACHE_TYPE_EXTTABLES);
+    }
+
+
+    $extensionIconPath = 'EXT:' . $extensionKey . '/Resources/Public/Icons/ext_icon.svg';
+
+    // Register backend module
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
+        'ArminVieweg.' . $extensionKey,
+        'tools',
+        'dceModule',
+        '',
+        [
+            'DceModule' => 'index,clearCaches,hallOfFame,updateTcaMappings',
+            'Dce' => 'renderPreview'
+        ],
+        [
+            'access' => 'user,group',
+            'icon' => $extensionIconPath,
+            'labels' => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_mod.xml',
+        ]
+    );
+
+    // Register PageTS defaults
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('tx_dce.defaults {
+        simpleBackendView {
+            titleCropLength = 10
+            titleCropAppendix = ...
+
+            imageWidth = 50c
+            imageHeight = 50c
+
+            containerGroupColors {
+                10 = #0079BF
+                11 = #D29034
+                12 = #519839
+                13 = #B04632
+                14 = #838C91
+                15 = #CD5A91
+                16 = #4BBF6B
+                17 = #89609E
+                18 = #00AECC
+                19 = #ED2448
+                20 = #FF8700
+            }
+        }
+    }');
+
+    /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
+    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\CMS\Core\Imaging\IconRegistry');
+    // DCE Icon
+    $iconRegistry->registerIcon(
+        'ext-dce-dce',
+        'TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider',
+        ['source' => 'EXT:dce/Resources/Public/Icons/ext_icon.png']
+    );
+    // DCE Field Type Icons
+    $iconRegistry->registerIcon(
+        'ext-dce-dcefield-type-element',
+        'TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider',
+        ['source' => 'EXT:dce/Resources/Public/Icons/tx_dce_domain_model_dcefield_element.png']
+    );
+    $iconRegistry->registerIcon(
+        'ext-dce-dcefield-type-tab',
+        'TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider',
+        ['source' => 'EXT:dce/Resources/Public/Icons/tx_dce_domain_model_dcefield_tab.png']
+    );
+    $iconRegistry->registerIcon(
+        'ext-dce-dcefield-type-section',
+        'TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider',
+        ['source' => 'EXT:dce/Resources/Public/Icons/tx_dce_domain_model_dcefield_section.png']
+    );
+};
+
+$boot($_EXTKEY);
+unset($boot);
 
 #

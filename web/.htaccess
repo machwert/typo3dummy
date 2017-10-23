@@ -364,11 +364,11 @@ FileETag None
 
 
 # Add your own rules here.
-AuthUserFile /typo3dummy.machwert.de/typo3dummy/web/.htpasswd
+AuthUserFile /var/www/vhosts/hosting8960.af954.netcup.net/typo3dummy.machwert.de/typo3dummy/web/.htpasswd
 AuthName "Locked"
 AuthType Basic
 Require valid-user
-#SetEnvIf Host typo3dummy.machwert.de secure_content
+SetEnvIf Host typo3dummy.machwert.de secure_content
 Order Allow,Deny
 Allow from all
 Deny from env=secure_content

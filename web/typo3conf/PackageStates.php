@@ -125,17 +125,8 @@ return [
         'carashtheme' => [
             'packagePath' => 'typo3conf/ext/carashtheme/',
         ],
-        'dyncss' => [
-            'packagePath' => 'typo3conf/ext/dyncss/',
-        ],
-        'dyncss_less' => [
-            'packagePath' => 'typo3conf/ext/dyncss_less/',
-        ],
         'mw_dummy' => [
             'packagePath' => 'typo3conf/ext/mw_dummy/',
-        ],
-        'dce' => [
-            'packagePath' => 'typo3conf/ext/dce/',
         ],
     ],
     'version' => 5,

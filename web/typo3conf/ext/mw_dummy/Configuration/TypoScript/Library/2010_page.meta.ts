@@ -11,9 +11,3 @@ page.meta {
     keywords.field = keywords
     robots = index,follow
 }
-page.headerData.989898537 = TEXT
-page.headerData.989898537.value (
-<!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-)

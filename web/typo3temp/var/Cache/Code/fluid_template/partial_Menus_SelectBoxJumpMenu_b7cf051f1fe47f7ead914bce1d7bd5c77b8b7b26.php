@@ -35,12 +35,12 @@ $self = $this;
 $output0 = '';
 $array1 = array (
 );
-$output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('menu.label', $array1)]);
+$output0 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('menu.label', $array1), ENT_QUOTES);
 
 $output0 .= ' <select class="form-control t3-js-jumpMenuBox" name="';
 $array2 = array (
 );
-$output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('menu.identifier', $array2)]);
+$output0 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('menu.identifier', $array2), ENT_QUOTES);
 
 $output0 .= '" onchange="if(this.options[this.selectedIndex].value){window.location.href=(this.options[this.selectedIndex].value);}">
 	';
@@ -52,7 +52,7 @@ $output6 .= '
 		<option value="';
 $array7 = array (
 );
-$output6 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('menuItem.href', $array7)]);
+$output6 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('menuItem.href', $array7), ENT_QUOTES);
 
 $output6 .= '" ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -67,7 +67,7 @@ $arguments8['condition'] = false;
 // Rendering Array
 $array10 = array();
 $array11 = array (
-);$array10['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('menuItem.active', $array11)]);
+);$array10['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('menuItem.active', $array11), ENT_QUOTES);
 
 $expression12 = function($context) {return ($context["node0"]);};
 $arguments8['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -83,7 +83,7 @@ $output6 .= TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper::renderStatic($arguments8,
 $output6 .= '>';
 $array13 = array (
 );
-$output6 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('menuItem.title', $array13)]);
+$output6 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('menuItem.title', $array13), ENT_QUOTES);
 
 $output6 .= '</option>
 	';

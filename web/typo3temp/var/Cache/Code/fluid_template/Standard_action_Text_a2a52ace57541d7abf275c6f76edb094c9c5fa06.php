@@ -70,7 +70,7 @@ $arguments5 = array();
 $arguments5['name'] = NULL;
 $arguments5['name'] = 'Default';
 
-$output4 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [NULL]);
+$output4 .= htmlspecialchars(TYPO3Fluid\Fluid\ViewHelpers\LayoutViewHelper::renderStatic($arguments5, $renderChildrenClosure6, $renderingContext), ENT_QUOTES);
 
 $output4 .= '
 ';
@@ -100,7 +100,7 @@ $arguments7 = array();
 $arguments7['name'] = NULL;
 $arguments7['name'] = 'Main';
 
-$output4 .= NULL;
+$output4 .= '';
 
 $output4 .= '
 

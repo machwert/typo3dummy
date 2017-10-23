@@ -57,7 +57,7 @@ $arguments7['extensionName'] = NULL;
 $arguments7['key'] = 'toTop';
 $arguments7['extensionName'] = 'fluid_styled_content';
 
-$output6 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments7, $renderChildrenClosure8, $renderingContext)]);
+$output6 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments7, $renderChildrenClosure8, $renderingContext), ENT_QUOTES);
 
 $output6 .= '</a>
 	</p>

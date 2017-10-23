@@ -79,7 +79,6 @@ $arguments92 = array();
 $arguments92['section'] = NULL;
 $arguments92['partial'] = NULL;
 $arguments92['delegate'] = NULL;
-$arguments92['renderable'] = NULL;
 $arguments92['arguments'] = array (
 );
 $arguments92['optional'] = false;
@@ -147,7 +146,6 @@ $arguments103 = array();
 $arguments103['section'] = NULL;
 $arguments103['partial'] = NULL;
 $arguments103['delegate'] = NULL;
-$arguments103['renderable'] = NULL;
 $arguments103['arguments'] = array (
 );
 $arguments103['optional'] = false;
@@ -241,7 +239,6 @@ $arguments66 = array();
 $arguments66['section'] = NULL;
 $arguments66['partial'] = NULL;
 $arguments66['delegate'] = NULL;
-$arguments66['renderable'] = NULL;
 $arguments66['arguments'] = array (
 );
 $arguments66['optional'] = false;
@@ -302,7 +299,6 @@ $arguments75 = array();
 $arguments75['section'] = NULL;
 $arguments75['partial'] = NULL;
 $arguments75['delegate'] = NULL;
-$arguments75['renderable'] = NULL;
 $arguments75['arguments'] = array (
 );
 $arguments75['optional'] = false;
@@ -420,7 +416,6 @@ $arguments37 = array();
 $arguments37['section'] = NULL;
 $arguments37['partial'] = NULL;
 $arguments37['delegate'] = NULL;
-$arguments37['renderable'] = NULL;
 $arguments37['arguments'] = array (
 );
 $arguments37['optional'] = false;
@@ -488,7 +483,6 @@ $arguments48 = array();
 $arguments48['section'] = NULL;
 $arguments48['partial'] = NULL;
 $arguments48['delegate'] = NULL;
-$arguments48['renderable'] = NULL;
 $arguments48['arguments'] = array (
 );
 $arguments48['optional'] = false;
@@ -582,7 +576,6 @@ $arguments11 = array();
 $arguments11['section'] = NULL;
 $arguments11['partial'] = NULL;
 $arguments11['delegate'] = NULL;
-$arguments11['renderable'] = NULL;
 $arguments11['arguments'] = array (
 );
 $arguments11['optional'] = false;
@@ -643,7 +636,6 @@ $arguments20 = array();
 $arguments20['section'] = NULL;
 $arguments20['partial'] = NULL;
 $arguments20['delegate'] = NULL;
-$arguments20['renderable'] = NULL;
 $arguments20['arguments'] = array (
 );
 $arguments20['optional'] = false;
@@ -719,7 +711,7 @@ $arguments115['arguments'] = NULL;
 $arguments115['extensionName'] = NULL;
 $arguments115['key'] = 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.path';
 
-$output114 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments115, $renderChildrenClosure116, $renderingContext)]);
+$output114 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments115, $renderChildrenClosure116, $renderingContext), ENT_QUOTES);
 
 $output114 .= ': ';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
@@ -833,7 +825,6 @@ $arguments131 = array();
 $arguments131['section'] = NULL;
 $arguments131['partial'] = NULL;
 $arguments131['delegate'] = NULL;
-$arguments131['renderable'] = NULL;
 $arguments131['arguments'] = array (
 );
 $arguments131['optional'] = false;
@@ -860,7 +851,6 @@ $arguments135 = array();
 $arguments135['section'] = NULL;
 $arguments135['partial'] = NULL;
 $arguments135['delegate'] = NULL;
-$arguments135['renderable'] = NULL;
 $arguments135['arguments'] = array (
 );
 $arguments135['optional'] = false;

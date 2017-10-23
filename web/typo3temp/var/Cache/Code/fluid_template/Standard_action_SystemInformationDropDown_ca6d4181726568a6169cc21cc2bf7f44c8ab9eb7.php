@@ -38,13 +38,13 @@ $output0 .= '
 <span class="systeminformationtoolbaritem-container t3js-systeminformation-container" data-count="';
 $array1 = array (
 );
-$output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('count', $array1)]);
+$output0 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('count', $array1), ENT_QUOTES);
 
 $output0 .= '"
 			data-severityclass="';
 $array2 = array (
 );
-$output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('severityBadgeClass', $array2)]);
+$output0 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('severityBadgeClass', $array2), ENT_QUOTES);
 
 $output0 .= '"></span>
 
@@ -63,7 +63,7 @@ $arguments3['arguments'] = NULL;
 $arguments3['extensionName'] = NULL;
 $arguments3['key'] = 'systemmessage.header';
 
-$output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments3, $renderChildrenClosure4, $renderingContext)]);
+$output0 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments3, $renderChildrenClosure4, $renderingContext), ENT_QUOTES);
 
 $output0 .= '
 </h3>
@@ -257,7 +257,7 @@ $array48 = array (
 $array49 = array (
 );$arguments46['default'] = $renderingContext->getVariableProvider()->getByPath('info.title', $array49);
 
-$output21 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments46, $renderChildrenClosure47, $renderingContext)]);
+$output21 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments46, $renderChildrenClosure47, $renderingContext), ENT_QUOTES);
 
 $output21 .= '
 					';
@@ -334,7 +334,7 @@ $output65 = '';
 $output65 .= 'text-';
 $array66 = array (
 );
-$output65 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('info.status', $array66)]);
+$output65 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('info.status', $array66), ENT_QUOTES);
 $arguments60['then'] = $output65;
 
 $output21 .= TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper::renderStatic($arguments60, $renderChildrenClosure61, $renderingContext);
@@ -343,7 +343,7 @@ $output21 .= '">
 					';
 $array67 = array (
 );
-$output21 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('info.value', $array67)]);
+$output21 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('info.value', $array67), ENT_QUOTES);
 
 $output21 .= '
 				</div>
@@ -426,25 +426,25 @@ $output151 .= '
 					<p id="systeminformation_';
 $array152 = array (
 );
-$output151 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array152)]);
+$output151 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array152), ENT_QUOTES);
 
 $output151 .= '"
 						 class="dropdown-text t3js-systeminformation-module typo3-module-menu-item submodule mod-';
 $array153 = array (
 );
-$output151 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array153)]);
+$output151 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array153), ENT_QUOTES);
 
 $output151 .= '"
 						 data-modulename="';
 $array154 = array (
 );
-$output151 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array154)]);
+$output151 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array154), ENT_QUOTES);
 
 $output151 .= '">
 						<span class="text-';
 $array155 = array (
 );
-$output151 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.status', $array155)]);
+$output151 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.status', $array155), ENT_QUOTES);
 
 $output151 .= '">';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
@@ -476,7 +476,7 @@ $output161 .= '
 					<p class="dropdown-text text-';
 $array162 = array (
 );
-$output161 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.status', $array162)]);
+$output161 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.status', $array162), ENT_QUOTES);
 
 $output161 .= '">
 						';
@@ -528,25 +528,25 @@ $output132 .= '
 					<p id="systeminformation_';
 $array133 = array (
 );
-$output132 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array133)]);
+$output132 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array133), ENT_QUOTES);
 
 $output132 .= '"
 						 class="dropdown-text t3js-systeminformation-module typo3-module-menu-item submodule mod-';
 $array134 = array (
 );
-$output132 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array134)]);
+$output132 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array134), ENT_QUOTES);
 
 $output132 .= '"
 						 data-modulename="';
 $array135 = array (
 );
-$output132 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array135)]);
+$output132 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array135), ENT_QUOTES);
 
 $output132 .= '">
 						<span class="text-';
 $array136 = array (
 );
-$output132 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.status', $array136)]);
+$output132 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.status', $array136), ENT_QUOTES);
 
 $output132 .= '">';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
@@ -571,7 +571,7 @@ $output140 .= '
 					<p class="dropdown-text text-';
 $array141 = array (
 );
-$output140 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.status', $array141)]);
+$output140 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.status', $array141), ENT_QUOTES);
 
 $output140 .= '">
 						';
@@ -645,7 +645,7 @@ $arguments172['arguments'] = NULL;
 $arguments172['extensionName'] = NULL;
 $arguments172['key'] = 'systemmessage.allgood';
 
-$output171 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments172, $renderChildrenClosure173, $renderingContext)]);
+$output171 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments172, $renderChildrenClosure173, $renderingContext), ENT_QUOTES);
 
 $output171 .= '
 			';
@@ -719,25 +719,25 @@ $output96 .= '
 					<p id="systeminformation_';
 $array97 = array (
 );
-$output96 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array97)]);
+$output96 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array97), ENT_QUOTES);
 
 $output96 .= '"
 						 class="dropdown-text t3js-systeminformation-module typo3-module-menu-item submodule mod-';
 $array98 = array (
 );
-$output96 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array98)]);
+$output96 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array98), ENT_QUOTES);
 
 $output96 .= '"
 						 data-modulename="';
 $array99 = array (
 );
-$output96 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array99)]);
+$output96 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array99), ENT_QUOTES);
 
 $output96 .= '">
 						<span class="text-';
 $array100 = array (
 );
-$output96 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.status', $array100)]);
+$output96 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.status', $array100), ENT_QUOTES);
 
 $output96 .= '">';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
@@ -769,7 +769,7 @@ $output106 .= '
 					<p class="dropdown-text text-';
 $array107 = array (
 );
-$output106 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.status', $array107)]);
+$output106 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.status', $array107), ENT_QUOTES);
 
 $output106 .= '">
 						';
@@ -821,25 +821,25 @@ $output77 .= '
 					<p id="systeminformation_';
 $array78 = array (
 );
-$output77 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array78)]);
+$output77 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array78), ENT_QUOTES);
 
 $output77 .= '"
 						 class="dropdown-text t3js-systeminformation-module typo3-module-menu-item submodule mod-';
 $array79 = array (
 );
-$output77 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array79)]);
+$output77 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array79), ENT_QUOTES);
 
 $output77 .= '"
 						 data-modulename="';
 $array80 = array (
 );
-$output77 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.module', $array80)]);
+$output77 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.module', $array80), ENT_QUOTES);
 
 $output77 .= '">
 						<span class="text-';
 $array81 = array (
 );
-$output77 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.status', $array81)]);
+$output77 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.status', $array81), ENT_QUOTES);
 
 $output77 .= '">';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\Format\RawViewHelper
@@ -864,7 +864,7 @@ $output85 .= '
 					<p class="dropdown-text text-';
 $array86 = array (
 );
-$output85 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('message.status', $array86)]);
+$output85 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('message.status', $array86), ENT_QUOTES);
 
 $output85 .= '">
 						';
@@ -931,7 +931,7 @@ $arguments115['arguments'] = NULL;
 $arguments115['extensionName'] = NULL;
 $arguments115['key'] = 'systemmessage.allgood';
 
-$output114 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments115, $renderChildrenClosure116, $renderingContext)]);
+$output114 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments115, $renderChildrenClosure116, $renderingContext), ENT_QUOTES);
 
 $output114 .= '
 			';

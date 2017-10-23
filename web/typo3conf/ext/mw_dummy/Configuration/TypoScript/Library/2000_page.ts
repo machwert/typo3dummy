@@ -5,22 +5,10 @@ page.shortcutIcon = {$resDir}/Public/Icons/favicon.ico
 
 ##CSS & JS
 page.includeCSS {
-    file9 = https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css
-    file9.external = 1
     file50 = {$customCss}
 }
 
 page.bodyTag >
-page.bodyTagCObject = TEXT
-page.bodyTagCObject.value = <body><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KVZZWT" height= "0" width= "0" style= "display:none;visibility:hidden" > </iframe></noscript> <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KVZZWT'); </script>
-
-[PIDinRootline = 3]
-page.bodyTagCObject.value = <body><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MWNCRR" height = "0" width= "0" style= "display:none;visibility:hidden" > </iframe></noscript> <script>(function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MWNCRR'); </script>
-[global]
-
-[globalVar = TSFE:id=2] && [globalVar = GP:L!=1]
-page.headTag = <head><script>function utmx_section(){}function utmx(){}(function(){var k='118236454-0',d=document,l=d.location,c=d.cookie; if(l.search.indexOf('utm_expid='+k)>0)return; function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c. indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c. length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write( '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl': '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+ '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date(). valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+ '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})(); </script><script>utmx('url','A/B');</script>
-[global]
 
 // properties for Facebook
 
@@ -37,11 +25,8 @@ lib.canonicalTag {
         addQueryString.exclude = id,cHash
         returnLast = url
     }
-    wrap = http://www.iteratec.de|
+    wrap = |
 }
-[PIDinRootline = 3]
-    lib.canonicalTag.wrap = http://karriere.iteratec.de|
-[global]
 
 // condition: nur für facebook user agent:
 //[useragent = facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)]
@@ -50,7 +35,6 @@ page.headerData.15 {
     5 = TEXT
     5.value (
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@iteratec" />
     )
     6 = TEXT
     6.value = <meta property="og:type" content="website" />
@@ -63,11 +47,6 @@ page.headerData.15 {
     30.data = page:title
     40 = TEXT
     40.value = "/>
-    50 = TEXT
-    50.value(
-
-<meta property="og:site_name" content="iteratec"/>
-    )
     60 = TEXT
     60.value (
 
@@ -118,7 +97,7 @@ page.headerData.42 {
  page.headerData.15.80 >
  page.headerData.16 >
 [global]
-    
+
 [globalVar = TSFE:id=2]
     page.headerData.99921 = TEXT
     page.headerData.99921 {

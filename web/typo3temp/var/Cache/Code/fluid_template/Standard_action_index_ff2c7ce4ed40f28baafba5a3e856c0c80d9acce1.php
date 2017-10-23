@@ -58,7 +58,6 @@ $arguments3 = array();
 $arguments3['section'] = NULL;
 $arguments3['partial'] = NULL;
 $arguments3['delegate'] = NULL;
-$arguments3['renderable'] = NULL;
 $arguments3['arguments'] = array (
 );
 $arguments3['optional'] = false;
@@ -90,7 +89,6 @@ $arguments8 = array();
 $arguments8['section'] = NULL;
 $arguments8['partial'] = NULL;
 $arguments8['delegate'] = NULL;
-$arguments8['renderable'] = NULL;
 $arguments8['arguments'] = array (
 );
 $arguments8['optional'] = false;

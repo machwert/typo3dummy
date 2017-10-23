@@ -57,7 +57,6 @@ $arguments15 = array();
 $arguments15['section'] = NULL;
 $arguments15['partial'] = NULL;
 $arguments15['delegate'] = NULL;
-$arguments15['renderable'] = NULL;
 $arguments15['arguments'] = array (
 );
 $arguments15['optional'] = false;
@@ -117,7 +116,6 @@ $arguments29 = array();
 $arguments29['section'] = NULL;
 $arguments29['partial'] = NULL;
 $arguments29['delegate'] = NULL;
-$arguments29['renderable'] = NULL;
 $arguments29['arguments'] = array (
 );
 $arguments29['optional'] = false;
@@ -175,7 +173,6 @@ $arguments42 = array();
 $arguments42['section'] = NULL;
 $arguments42['partial'] = NULL;
 $arguments42['delegate'] = NULL;
-$arguments42['renderable'] = NULL;
 $arguments42['arguments'] = array (
 );
 $arguments42['optional'] = false;

@@ -37,12 +37,12 @@ $output0 = '';
 $output0 .= '<div class="module" data-module-id="';
 $array1 = array (
 );
-$output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('moduleId', $array1)]);
+$output0 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('moduleId', $array1), ENT_QUOTES);
 
 $output0 .= '" data-module-name="';
 $array2 = array (
 );
-$output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('moduleName', $array2)]);
+$output0 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('moduleName', $array2), ENT_QUOTES);
 
 $output0 .= '">
 	';
@@ -135,7 +135,6 @@ $arguments25 = array();
 $arguments25['section'] = NULL;
 $arguments25['partial'] = NULL;
 $arguments25['delegate'] = NULL;
-$arguments25['renderable'] = NULL;
 $arguments25['arguments'] = array (
 );
 $arguments25['optional'] = false;

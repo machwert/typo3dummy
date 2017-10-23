@@ -53,7 +53,7 @@ $arguments1['arguments'] = NULL;
 $arguments1['extensionName'] = NULL;
 $arguments1['key'] = 'installedExtensions';
 
-$output0 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments1, $renderChildrenClosure2, $renderingContext)]);
+$output0 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments1, $renderChildrenClosure2, $renderingContext), ENT_QUOTES);
 
 $output0 .= '</h1>
 ';
@@ -77,7 +77,6 @@ $arguments4 = array();
 $arguments4['section'] = NULL;
 $arguments4['partial'] = NULL;
 $arguments4['delegate'] = NULL;
-$arguments4['renderable'] = NULL;
 $arguments4['arguments'] = array (
 );
 $arguments4['optional'] = false;
@@ -164,7 +163,7 @@ $arguments11['arguments'] = NULL;
 $arguments11['extensionName'] = NULL;
 $arguments11['key'] = 'extensionList.header.title.update';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments11, $renderChildrenClosure12, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments11, $renderChildrenClosure12, $renderingContext), ENT_QUOTES);
 
 $output3 .= '">';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper
@@ -180,7 +179,7 @@ $arguments13['arguments'] = NULL;
 $arguments13['extensionName'] = NULL;
 $arguments13['key'] = 'extensionList.header.update';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments13, $renderChildrenClosure14, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments13, $renderChildrenClosure14, $renderingContext), ENT_QUOTES);
 
 $output3 .= '</th>
 				<th title="';
@@ -197,7 +196,7 @@ $arguments15['arguments'] = NULL;
 $arguments15['extensionName'] = NULL;
 $arguments15['key'] = 'extensionList.header.title.activate';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments15, $renderChildrenClosure16, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments15, $renderChildrenClosure16, $renderingContext), ENT_QUOTES);
 
 $output3 .= '">';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper
@@ -213,7 +212,7 @@ $arguments17['arguments'] = NULL;
 $arguments17['extensionName'] = NULL;
 $arguments17['key'] = 'extensionList.header.activate';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments17, $renderChildrenClosure18, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments17, $renderChildrenClosure18, $renderingContext), ENT_QUOTES);
 
 $output3 .= '</th>
 				<th>';
@@ -230,7 +229,7 @@ $arguments19['arguments'] = NULL;
 $arguments19['extensionName'] = NULL;
 $arguments19['key'] = 'extensionList.header.extensionName';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments19, $renderChildrenClosure20, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments19, $renderChildrenClosure20, $renderingContext), ENT_QUOTES);
 
 $output3 .= '</th>
 				<th>';
@@ -247,7 +246,7 @@ $arguments21['arguments'] = NULL;
 $arguments21['extensionName'] = NULL;
 $arguments21['key'] = 'extensionList.header.extensionKey';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments21, $renderChildrenClosure22, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments21, $renderChildrenClosure22, $renderingContext), ENT_QUOTES);
 
 $output3 .= '</th>
 				<th>';
@@ -264,7 +263,7 @@ $arguments23['arguments'] = NULL;
 $arguments23['extensionName'] = NULL;
 $arguments23['key'] = 'extensionList.header.extensionVersion';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments23, $renderChildrenClosure24, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments23, $renderChildrenClosure24, $renderingContext), ENT_QUOTES);
 
 $output3 .= '</th>
 				<th>';
@@ -281,7 +280,7 @@ $arguments25['arguments'] = NULL;
 $arguments25['extensionName'] = NULL;
 $arguments25['key'] = 'extensionList.header.extensionState';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments25, $renderChildrenClosure26, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments25, $renderChildrenClosure26, $renderingContext), ENT_QUOTES);
 
 $output3 .= '</th>
 				<th>';
@@ -298,7 +297,7 @@ $arguments27['arguments'] = NULL;
 $arguments27['extensionName'] = NULL;
 $arguments27['key'] = 'extensionList.header.extensionType';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments27, $renderChildrenClosure28, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments27, $renderChildrenClosure28, $renderingContext), ENT_QUOTES);
 
 $output3 .= '</th>
 				<th>';
@@ -315,7 +314,7 @@ $arguments29['arguments'] = NULL;
 $arguments29['extensionName'] = NULL;
 $arguments29['key'] = 'extensionList.header.extensionActions';
 
-$output3 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments29, $renderChildrenClosure30, $renderingContext)]);
+$output3 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments29, $renderChildrenClosure30, $renderingContext), ENT_QUOTES);
 
 $output3 .= '</th>
 			</tr>
@@ -342,7 +341,7 @@ $output67 .= '
 						<tr id="';
 $array68 = array (
 );
-$output67 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array68)]);
+$output67 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array68), ENT_QUOTES);
 
 $output67 .= '" class="';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -357,7 +356,7 @@ $arguments69['condition'] = false;
 // Rendering Array
 $array71 = array();
 $array72 = array (
-);$array71['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array72)]);
+);$array71['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array72), ENT_QUOTES);
 $array71['1'] = ' == -1';
 
 $expression73 = function($context) {return (($context["node0"]) == -1);};
@@ -382,7 +381,7 @@ $arguments74['condition'] = false;
 // Rendering Array
 $array76 = array();
 $array77 = array (
-);$array76['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array77)]);
+);$array76['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array77), ENT_QUOTES);
 $array76['1'] = ' == -2';
 
 $expression78 = function($context) {return (($context["node0"]) == -2);};
@@ -409,7 +408,7 @@ $arguments79['condition'] = false;
 // Rendering Array
 $array81 = array();
 $array82 = array (
-);$array81['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.installed', $array82)]);
+);$array81['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.installed', $array82), ENT_QUOTES);
 
 $expression83 = function($context) {return ($context["node0"]);};
 $arguments79['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -441,7 +440,7 @@ $output86 .= '
 						<tr id="';
 $array87 = array (
 );
-$output86 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array87)]);
+$output86 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array87), ENT_QUOTES);
 
 $output86 .= '" class="';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -456,7 +455,7 @@ $arguments88['condition'] = false;
 // Rendering Array
 $array90 = array();
 $array91 = array (
-);$array90['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.installed', $array91)]);
+);$array90['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.installed', $array91), ENT_QUOTES);
 
 $expression92 = function($context) {return ($context["node0"]);};
 $arguments88['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -507,7 +506,7 @@ $output37 .= '
 						<tr id="';
 $array38 = array (
 );
-$output37 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array38)]);
+$output37 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array38), ENT_QUOTES);
 
 $output37 .= '" class="';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -522,7 +521,7 @@ $arguments39['condition'] = false;
 // Rendering Array
 $array41 = array();
 $array42 = array (
-);$array41['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array42)]);
+);$array41['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array42), ENT_QUOTES);
 $array41['1'] = ' == -1';
 
 $expression43 = function($context) {return (($context["node0"]) == -1);};
@@ -547,7 +546,7 @@ $arguments44['condition'] = false;
 // Rendering Array
 $array46 = array();
 $array47 = array (
-);$array46['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array47)]);
+);$array46['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array47), ENT_QUOTES);
 $array46['1'] = ' == -2';
 
 $expression48 = function($context) {return (($context["node0"]) == -2);};
@@ -574,7 +573,7 @@ $arguments49['condition'] = false;
 // Rendering Array
 $array51 = array();
 $array52 = array (
-);$array51['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.installed', $array52)]);
+);$array51['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.installed', $array52), ENT_QUOTES);
 
 $expression53 = function($context) {return ($context["node0"]);};
 $arguments49['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -599,7 +598,7 @@ $output54 .= '
 						<tr id="';
 $array55 = array (
 );
-$output54 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array55)]);
+$output54 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array55), ENT_QUOTES);
 
 $output54 .= '" class="';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -614,7 +613,7 @@ $arguments56['condition'] = false;
 // Rendering Array
 $array58 = array();
 $array59 = array (
-);$array58['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.installed', $array59)]);
+);$array58['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.installed', $array59), ENT_QUOTES);
 
 $expression60 = function($context) {return ($context["node0"]);};
 $arguments56['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -669,7 +668,7 @@ $arguments128['arguments'] = NULL;
 $arguments128['extensionName'] = NULL;
 $arguments128['key'] = 'extensionList.updateDisabled';
 
-$output127 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments128, $renderChildrenClosure129, $renderingContext)]);
+$output127 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments128, $renderChildrenClosure129, $renderingContext), ENT_QUOTES);
 
 $output127 .= '">
 									';
@@ -851,7 +850,7 @@ $arguments102['arguments'] = NULL;
 $arguments102['extensionName'] = NULL;
 $arguments102['key'] = 'extensionList.updateDisabled';
 
-$output101 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments102, $renderChildrenClosure103, $renderingContext)]);
+$output101 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments102, $renderChildrenClosure103, $renderingContext), ENT_QUOTES);
 
 $output101 .= '">
 									';
@@ -1078,15 +1077,15 @@ $output162 .= '
 						<img class="ext-icon" src="../';
 $array163 = array (
 );
-$output162 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.siteRelPath', $array163)]);
+$output162 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.siteRelPath', $array163), ENT_QUOTES);
 $array164 = array (
 );
-$output162 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.ext_icon', $array164)]);
+$output162 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.ext_icon', $array164), ENT_QUOTES);
 
 $output162 .= '" alt="';
 $array165 = array (
 );
-$output162 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.title', $array165)]);
+$output162 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.title', $array165), ENT_QUOTES);
 
 $output162 .= '" />
 					';
@@ -1118,7 +1117,7 @@ $output34 .= '
 // Rendering ViewHelper TYPO3\CMS\Extensionmanager\ViewHelpers\ConfigureExtensionViewHelper
 $renderChildrenClosure167 = function() use ($renderingContext, $self) {
 $array173 = array (
-);return call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.title', $array173)]);
+);return htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.title', $array173), ENT_QUOTES);
 };
 $arguments166 = array();
 $arguments166['additionalAttributes'] = NULL;
@@ -1174,7 +1173,7 @@ $output34 .= '
 					';
 $array174 = array (
 );
-$output34 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array174)]);
+$output34 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array174), ENT_QUOTES);
 
 $output34 .= '
 				</td>
@@ -1182,7 +1181,7 @@ $output34 .= '
 					';
 $array175 = array (
 );
-$output34 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.version', $array175)]);
+$output34 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.version', $array175), ENT_QUOTES);
 
 $output34 .= '
 				</td>
@@ -1190,12 +1189,12 @@ $output34 .= '
 					<span class="label label-';
 $array176 = array (
 );
-$output34 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.state', $array176)]);
+$output34 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.state', $array176), ENT_QUOTES);
 
 $output34 .= '">';
 $array177 = array (
 );
-$output34 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.state', $array177)]);
+$output34 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.state', $array177), ENT_QUOTES);
 
 $output34 .= '</span>
 				</td>
@@ -1203,7 +1202,7 @@ $output34 .= '</span>
 					';
 $array178 = array (
 );
-$output34 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.type', $array178)]);
+$output34 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.type', $array178), ENT_QUOTES);
 
 $output34 .= '
 				</td>
@@ -1509,7 +1508,7 @@ $arguments210 = array();
 $arguments210['name'] = NULL;
 $arguments210['name'] = 'main';
 
-$output209 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [NULL]);
+$output209 .= htmlspecialchars(TYPO3Fluid\Fluid\ViewHelpers\LayoutViewHelper::renderStatic($arguments210, $renderChildrenClosure211, $renderingContext), ENT_QUOTES);
 
 $output209 .= '
 
@@ -1533,7 +1532,7 @@ $arguments215['arguments'] = NULL;
 $arguments215['extensionName'] = NULL;
 $arguments215['key'] = 'installedExtensions';
 
-$output214 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments215, $renderChildrenClosure216, $renderingContext)]);
+$output214 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments215, $renderChildrenClosure216, $renderingContext), ENT_QUOTES);
 
 $output214 .= '</h1>
 ';
@@ -1543,7 +1542,7 @@ $arguments212 = array();
 $arguments212['name'] = NULL;
 $arguments212['name'] = 'headline';
 
-$output209 .= NULL;
+$output209 .= '';
 
 $output209 .= '
 
@@ -1562,7 +1561,6 @@ $arguments220 = array();
 $arguments220['section'] = NULL;
 $arguments220['partial'] = NULL;
 $arguments220['delegate'] = NULL;
-$arguments220['renderable'] = NULL;
 $arguments220['arguments'] = array (
 );
 $arguments220['optional'] = false;
@@ -1649,7 +1647,7 @@ $arguments227['arguments'] = NULL;
 $arguments227['extensionName'] = NULL;
 $arguments227['key'] = 'extensionList.header.title.update';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments227, $renderChildrenClosure228, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments227, $renderChildrenClosure228, $renderingContext), ENT_QUOTES);
 
 $output219 .= '">';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper
@@ -1665,7 +1663,7 @@ $arguments229['arguments'] = NULL;
 $arguments229['extensionName'] = NULL;
 $arguments229['key'] = 'extensionList.header.update';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments229, $renderChildrenClosure230, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments229, $renderChildrenClosure230, $renderingContext), ENT_QUOTES);
 
 $output219 .= '</th>
 				<th title="';
@@ -1682,7 +1680,7 @@ $arguments231['arguments'] = NULL;
 $arguments231['extensionName'] = NULL;
 $arguments231['key'] = 'extensionList.header.title.activate';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments231, $renderChildrenClosure232, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments231, $renderChildrenClosure232, $renderingContext), ENT_QUOTES);
 
 $output219 .= '">';
 // Rendering ViewHelper TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper
@@ -1698,7 +1696,7 @@ $arguments233['arguments'] = NULL;
 $arguments233['extensionName'] = NULL;
 $arguments233['key'] = 'extensionList.header.activate';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments233, $renderChildrenClosure234, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments233, $renderChildrenClosure234, $renderingContext), ENT_QUOTES);
 
 $output219 .= '</th>
 				<th>';
@@ -1715,7 +1713,7 @@ $arguments235['arguments'] = NULL;
 $arguments235['extensionName'] = NULL;
 $arguments235['key'] = 'extensionList.header.extensionName';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments235, $renderChildrenClosure236, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments235, $renderChildrenClosure236, $renderingContext), ENT_QUOTES);
 
 $output219 .= '</th>
 				<th>';
@@ -1732,7 +1730,7 @@ $arguments237['arguments'] = NULL;
 $arguments237['extensionName'] = NULL;
 $arguments237['key'] = 'extensionList.header.extensionKey';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments237, $renderChildrenClosure238, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments237, $renderChildrenClosure238, $renderingContext), ENT_QUOTES);
 
 $output219 .= '</th>
 				<th>';
@@ -1749,7 +1747,7 @@ $arguments239['arguments'] = NULL;
 $arguments239['extensionName'] = NULL;
 $arguments239['key'] = 'extensionList.header.extensionVersion';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments239, $renderChildrenClosure240, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments239, $renderChildrenClosure240, $renderingContext), ENT_QUOTES);
 
 $output219 .= '</th>
 				<th>';
@@ -1766,7 +1764,7 @@ $arguments241['arguments'] = NULL;
 $arguments241['extensionName'] = NULL;
 $arguments241['key'] = 'extensionList.header.extensionState';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments241, $renderChildrenClosure242, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments241, $renderChildrenClosure242, $renderingContext), ENT_QUOTES);
 
 $output219 .= '</th>
 				<th>';
@@ -1783,7 +1781,7 @@ $arguments243['arguments'] = NULL;
 $arguments243['extensionName'] = NULL;
 $arguments243['key'] = 'extensionList.header.extensionType';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments243, $renderChildrenClosure244, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments243, $renderChildrenClosure244, $renderingContext), ENT_QUOTES);
 
 $output219 .= '</th>
 				<th>';
@@ -1800,7 +1798,7 @@ $arguments245['arguments'] = NULL;
 $arguments245['extensionName'] = NULL;
 $arguments245['key'] = 'extensionList.header.extensionActions';
 
-$output219 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments245, $renderChildrenClosure246, $renderingContext)]);
+$output219 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments245, $renderChildrenClosure246, $renderingContext), ENT_QUOTES);
 
 $output219 .= '</th>
 			</tr>
@@ -1827,7 +1825,7 @@ $output283 .= '
 						<tr id="';
 $array284 = array (
 );
-$output283 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array284)]);
+$output283 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array284), ENT_QUOTES);
 
 $output283 .= '" class="';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -1842,7 +1840,7 @@ $arguments285['condition'] = false;
 // Rendering Array
 $array287 = array();
 $array288 = array (
-);$array287['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array288)]);
+);$array287['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array288), ENT_QUOTES);
 $array287['1'] = ' == -1';
 
 $expression289 = function($context) {return (($context["node0"]) == -1);};
@@ -1867,7 +1865,7 @@ $arguments290['condition'] = false;
 // Rendering Array
 $array292 = array();
 $array293 = array (
-);$array292['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array293)]);
+);$array292['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array293), ENT_QUOTES);
 $array292['1'] = ' == -2';
 
 $expression294 = function($context) {return (($context["node0"]) == -2);};
@@ -1894,7 +1892,7 @@ $arguments295['condition'] = false;
 // Rendering Array
 $array297 = array();
 $array298 = array (
-);$array297['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.installed', $array298)]);
+);$array297['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.installed', $array298), ENT_QUOTES);
 
 $expression299 = function($context) {return ($context["node0"]);};
 $arguments295['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -1926,7 +1924,7 @@ $output302 .= '
 						<tr id="';
 $array303 = array (
 );
-$output302 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array303)]);
+$output302 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array303), ENT_QUOTES);
 
 $output302 .= '" class="';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -1941,7 +1939,7 @@ $arguments304['condition'] = false;
 // Rendering Array
 $array306 = array();
 $array307 = array (
-);$array306['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.installed', $array307)]);
+);$array306['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.installed', $array307), ENT_QUOTES);
 
 $expression308 = function($context) {return ($context["node0"]);};
 $arguments304['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -1992,7 +1990,7 @@ $output253 .= '
 						<tr id="';
 $array254 = array (
 );
-$output253 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array254)]);
+$output253 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array254), ENT_QUOTES);
 
 $output253 .= '" class="';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -2007,7 +2005,7 @@ $arguments255['condition'] = false;
 // Rendering Array
 $array257 = array();
 $array258 = array (
-);$array257['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array258)]);
+);$array257['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array258), ENT_QUOTES);
 $array257['1'] = ' == -1';
 
 $expression259 = function($context) {return (($context["node0"]) == -1);};
@@ -2032,7 +2030,7 @@ $arguments260['condition'] = false;
 // Rendering Array
 $array262 = array();
 $array263 = array (
-);$array262['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array263)]);
+);$array262['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.terObject.reviewState', $array263), ENT_QUOTES);
 $array262['1'] = ' == -2';
 
 $expression264 = function($context) {return (($context["node0"]) == -2);};
@@ -2059,7 +2057,7 @@ $arguments265['condition'] = false;
 // Rendering Array
 $array267 = array();
 $array268 = array (
-);$array267['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.installed', $array268)]);
+);$array267['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.installed', $array268), ENT_QUOTES);
 
 $expression269 = function($context) {return ($context["node0"]);};
 $arguments265['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -2084,7 +2082,7 @@ $output270 .= '
 						<tr id="';
 $array271 = array (
 );
-$output270 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array271)]);
+$output270 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array271), ENT_QUOTES);
 
 $output270 .= '" class="';
 // Rendering ViewHelper TYPO3Fluid\Fluid\ViewHelpers\IfViewHelper
@@ -2099,7 +2097,7 @@ $arguments272['condition'] = false;
 // Rendering Array
 $array274 = array();
 $array275 = array (
-);$array274['0'] = call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.installed', $array275)]);
+);$array274['0'] = htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.installed', $array275), ENT_QUOTES);
 
 $expression276 = function($context) {return ($context["node0"]);};
 $arguments272['condition'] = TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\BooleanNode::convertToBoolean(
@@ -2154,7 +2152,7 @@ $arguments344['arguments'] = NULL;
 $arguments344['extensionName'] = NULL;
 $arguments344['key'] = 'extensionList.updateDisabled';
 
-$output343 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments344, $renderChildrenClosure345, $renderingContext)]);
+$output343 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments344, $renderChildrenClosure345, $renderingContext), ENT_QUOTES);
 
 $output343 .= '">
 									';
@@ -2336,7 +2334,7 @@ $arguments318['arguments'] = NULL;
 $arguments318['extensionName'] = NULL;
 $arguments318['key'] = 'extensionList.updateDisabled';
 
-$output317 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments318, $renderChildrenClosure319, $renderingContext)]);
+$output317 .= htmlspecialchars(TYPO3\CMS\Fluid\ViewHelpers\TranslateViewHelper::renderStatic($arguments318, $renderChildrenClosure319, $renderingContext), ENT_QUOTES);
 
 $output317 .= '">
 									';
@@ -2563,15 +2561,15 @@ $output378 .= '
 						<img class="ext-icon" src="../';
 $array379 = array (
 );
-$output378 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.siteRelPath', $array379)]);
+$output378 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.siteRelPath', $array379), ENT_QUOTES);
 $array380 = array (
 );
-$output378 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.ext_icon', $array380)]);
+$output378 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.ext_icon', $array380), ENT_QUOTES);
 
 $output378 .= '" alt="';
 $array381 = array (
 );
-$output378 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.title', $array381)]);
+$output378 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.title', $array381), ENT_QUOTES);
 
 $output378 .= '" />
 					';
@@ -2603,7 +2601,7 @@ $output250 .= '
 // Rendering ViewHelper TYPO3\CMS\Extensionmanager\ViewHelpers\ConfigureExtensionViewHelper
 $renderChildrenClosure383 = function() use ($renderingContext, $self) {
 $array389 = array (
-);return call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.title', $array389)]);
+);return htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.title', $array389), ENT_QUOTES);
 };
 $arguments382 = array();
 $arguments382['additionalAttributes'] = NULL;
@@ -2659,7 +2657,7 @@ $output250 .= '
 					';
 $array390 = array (
 );
-$output250 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extensionKey', $array390)]);
+$output250 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extensionKey', $array390), ENT_QUOTES);
 
 $output250 .= '
 				</td>
@@ -2667,7 +2665,7 @@ $output250 .= '
 					';
 $array391 = array (
 );
-$output250 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.version', $array391)]);
+$output250 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.version', $array391), ENT_QUOTES);
 
 $output250 .= '
 				</td>
@@ -2675,12 +2673,12 @@ $output250 .= '
 					<span class="label label-';
 $array392 = array (
 );
-$output250 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.state', $array392)]);
+$output250 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.state', $array392), ENT_QUOTES);
 
 $output250 .= '">';
 $array393 = array (
 );
-$output250 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.state', $array393)]);
+$output250 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.state', $array393), ENT_QUOTES);
 
 $output250 .= '</span>
 				</td>
@@ -2688,7 +2686,7 @@ $output250 .= '</span>
 					';
 $array394 = array (
 );
-$output250 .= call_user_func_array( function ($var) { return (is_string($var) || (is_object($var) && method_exists($var, '__toString')) ? htmlspecialchars((string) $var, ENT_QUOTES) : $var); }, [$renderingContext->getVariableProvider()->getByPath('extension.type', $array394)]);
+$output250 .= htmlspecialchars($renderingContext->getVariableProvider()->getByPath('extension.type', $array394), ENT_QUOTES);
 
 $output250 .= '
 				</td>
@@ -2980,7 +2978,7 @@ $arguments217 = array();
 $arguments217['name'] = NULL;
 $arguments217['name'] = 'content';
 
-$output209 .= NULL;
+$output209 .= '';
 
 $output209 .= '
 ';

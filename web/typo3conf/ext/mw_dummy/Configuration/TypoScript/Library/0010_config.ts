@@ -1,5 +1,3 @@
-page.includeCSS.testLess = EXT:mw_dummy/Resources/Public/Stylesheets/main_styles.less
-
 config {
      headerComment (
 

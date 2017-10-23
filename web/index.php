@@ -1,1 +1,1 @@
-../vendor/typo3/cms/index.php
+typo3_src/index.php

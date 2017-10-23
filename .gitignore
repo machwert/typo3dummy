@@ -6,7 +6,7 @@
 bin
 #index.php
 nbproject
-#vendor
+vendor
 #typo3
 #typo3_src
 #web/index.php

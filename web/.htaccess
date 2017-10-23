@@ -364,7 +364,6 @@ FileETag None
 
 
 # Add your own rules here.
-
  AuthUserFile /Applications/MAMP/htdocs/typo3dummy/web/.htpasswd
  AuthName "Locked"
  AuthType Basic

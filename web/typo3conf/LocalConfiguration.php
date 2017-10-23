@@ -10,12 +10,12 @@ return [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8',
-                'dbname' => 'typo3dummy',
+                'dbname' => 'typo3',
                 'driver' => 'mysqli',
                 'host' => 'localhost',
-                'password' => 'x9UgtCJzIypQRT4U',
+                'password' => 'password',
                 'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-                'user' => 'typo3dummy',
+                'user' => 'typo3',
             ],
         ],
     ],

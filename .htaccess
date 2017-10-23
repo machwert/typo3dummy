@@ -1,0 +1,370 @@
+#####
+#
+# Example .htaccess file for TYPO3 CMS - for use with Apache Webserver
+#
+# This file includes settings for the following configuration options:
+#
+# - Compression via TYPO3
+# - Settings for mod_rewrite (URL-Rewriting)
+# - PHP optimisation
+# - Miscellaneous
+#
+# If you want to use it, you have to copy it to the root folder of your TYPO3 installation (if its
+# not there already) and rename it to '.htaccess'. To make .htaccess files work, you might need to
+# adjust the 'AllowOverride' directive in your Apache configuration file.
+#
+# IMPORTANT: You may need to change this file depending on your TYPO3 installation!
+#
+# Lines starting with a # are treated as comment and ignored by the web server.
+#
+# You should change every occurance of TYPO3root/ to the location where you have your website in.
+# For example:
+# If you have your website located at http://mysite.com/
+# then your TYPO3root/ is just empty (remove 'TYPO3root/')
+# If you have your website located at http://mysite.com/some/path/
+# then your TYPO3root/ is some/path/ (search and replace)
+#
+# You can also use this configuration in your httpd.conf, but then you have to modify some lines,
+# see the comments (search for 'httpd.conf')
+#
+# Questions about this file go to the matching Install mailing list, see
+# http://typo3.org/documentation/mailing-lists/
+#
+####
+# Sperrung alter Server mit der IP 176.28.48.223
+#AuthUserFile /var/www/responsive.cms.docspot.tv/web/.htpasswd
+#AuthName "Locked"
+#AuthType Basic
+#Require valid-user
+
+# Sperrung neuer Server IP 213.202.247.59
+
+AuthUserFile /var/www/clients/client1/web1/web/.htpasswd
+AuthName "Locked"
+AuthType Basic
+Require valid-user
+
+#Sperrung von Domains auf dem alten Server mit der IP 176.28.48.223 wurden übernommen auf diesem Hauptserver mit der IP 213.202.247.59
+
+SetEnvIf Host praxis-parkstrasse.de secure_content
+SetEnvIf Host xn--praxis-gk-77a.de secure_content
+SetEnvIf Host produkte.docspot.tv secure_content
+SetEnvIf Host selfy.* secure_content
+SetEnvIf Host frauenarzt-soest.responsive.cms.showedit.de secure_content
+SetEnvIf Host frauenarzt-dr-rogos.responsive.cms.showedit.de secure_content
+SetEnvIf Host frauenarzt-schubert.responsive.cms.showedit.de secure_content
+SetEnvIf Host hautarzt-steinhoff.responsive.cms.showedit.de secure_content
+SetEnvIf Host onepager-michael-schubert.responsive.cms.showedit.de secure_content
+SetEnvIf Host onepager-denker.responsive.cms.showedit.de secure_content
+SetEnvIf Host onepager-gelb.hautarzt-steinhoff.responsive.cms.showedit.de secure_content
+SetEnvIf Host dr-sassen.responsive.cms.showedit.de secure_content
+SetEnvIf Host mvz-hennigsdorf.de secure_content
+SetEnvIf Host frauenarzt-spiekermann.de secure_content
+#SetEnvIf Host xn--praxis-elsdorf-westermhlen-k0c.de secure_content
+SetEnvIf Host praxis-goek.de secure_content
+SetEnvIf Host venice-damenmoden.de secure_content
+
+#Sperrung der Arbeitsdomainsdomains auf dem diesem Hauptserver mit der IP 213.202.247.59
+
+SetEnvIf Host drs-aryus.de.easy-gateway.de secure_content
+SetEnvIf Host mvz-hennigsdorf.de.easy-gateway.de secure_content
+SetEnvIf Host divita-feinkost.de.easy-gateway.de secure_content
+SetEnvIf Host mvz-hennigsdorf.de.easy-gateway.de secure_content
+SetEnvIf Host drdallinger.de.easy-gateway.de secure_content
+SetEnvIf Host drdallinger.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host hausarzt-tessin.de.easy-gateway.de secure_content
+SetEnvIf Host hautarzt-steinhoff.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host hausarzt-langendreer.de.easy-gateway.de secure_content
+SetEnvIf Host frauenarzt-bankamp.de.easy-gateway.de secure_content
+SetEnvIf Host frauenarzt-bankamp.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host frauenarzt-soest.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host rothluebbers-und-partner.de.easy-gateway.de secure_content
+SetEnvIf Host rothluebbers-und-partner.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host frauenarzt-schubert.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host kardiologe-bochum.de.easy-gateway.de secure_content
+SetEnvIf Host kardiologe-bochum.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host gelb.hautarzt-steinhoff.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host frauenarzt-dr-rogos.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host dr-sassen.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host stadt-info.tv.easy-gateway.de secure_content
+SetEnvIf Host zeitsprung-infotainment.de.easy-gateway.de secure_content
+SetEnvIf Host precurix.tv.easy-gateway.de secure_content
+SetEnvIf Host zeitsprung-infotainment.eu.easy-gateway.de secure_content
+
+SetEnvIf Host work.zeitsprung-infotainment.de.easy-gateway.de secure_content
+SetEnvIf Host pos-partner.tv.easy-gateway.de secure_content
+SetEnvIf Host scratch.tv.easy-gateway.de secure_content
+SetEnvIf Host beauty-culture.tv.easy-gateway.de secure_content
+SetEnvIf Host first-screens.de.easy-gateway.de secure_content
+SetEnvIf Host first-screens.com.easy-gateway.de secure_content
+SetEnvIf Host second-screens.com.easy-gateway.de secure_content
+SetEnvIf Host lounge-info.tv.easy-gateway.de secure_content
+SetEnvIf Host work.beauty-culture.tv.easy-gateway.de secure_content
+SetEnvIf Host aup-bodenmanagement.de.easy-gateway.de secure_content
+SetEnvIf Host ski-info.tv.easy-gateway.de secure_content
+SetEnvIf Host docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host onepager-hautarzt-steinhoff.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host precurix.tv.easy-gateway.de secure_content
+SetEnvIf Host work.precurix.tv.easy-gateway.de secure_content
+SetEnvIf Host selfy.hausarzt-langendreer.de.easy-gateway.de secure_content
+SetEnvIf Host praxis-parkstrasse.de.easy-gateway.de secure_content
+SetEnvIf Host praxis-goek.de.easy-gateway.de secure_content
+SetEnvIf Host xn--frauenrztin-gk-moers-gzb71b.de.easy-gateway.de secure_content
+SetEnvIf Host hausarzt-langendreer.de.easy-gateway.de secure_content
+SetEnvIf Host selfy.frauenarzt-bankamp.de.easy-gateway.de secure_content
+
+SetEnvIf Host rothluebbers-und-partner.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host selfy.rothluebbers-und-partner.de.easy-gateway.de secure_content
+SetEnvIf Host die-picknicker.de.easy-gateway.de secure_content
+SetEnvIf Host sport-info.tv.easy-gateway.de secure_content
+SetEnvIf Host die-picknicker.de.easy-gateway.de secure_content
+SetEnvIf Host onepager-gelb.hautarzt-steinhoff.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host aup-bm.de.easy-gateway.de secure_content
+SetEnvIf Host onepager-michael-schubert.responsive.cms.docspot.tv.easy-gateway.de secure_content
+SetEnvIf Host easy-gateway.de secure_content
+
+#Sperrung der Backupdomains auf dem Backupserver mit er IP 46.237.213.247
+SetEnvIf Host backup.drs-aryus.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.mvz-hennigsdorf.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.divita-feinkost.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.drdallinger.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.drdallinger.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.hausarzt-tessin.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.hautarzt-steinhoff.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.hausarzt-langendreer.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.frauenarzt-bankamp.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.frauenarzt-bankamp.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.rothluebbers-und-partner.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.rothluebbers-und-partner.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.frauenarzt-schubert.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.kardiologe-bochum.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.kardiologe-bochum.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.gelb.hautarzt-steinhoff.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.frauenarzt-dr-rogos.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.dr-sassen.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.stadt-info.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.zeitsprung-infotainment.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.precurix.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.zeitsprung-infotainment.eu.praxis-tv.org secure_content
+SetEnvIf Host  backup.zeitsprung-infotainment.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.work.zeitsprung-infotainment.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.pos-partner.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.scratch.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.beauty-culture.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.first-screens.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.first-screens.com.praxis-tv.org secure_content
+SetEnvIf Host  backup.second-screens.com.praxis-tv.org secure_content
+SetEnvIf Host  backup.lounge-info.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.work.beauty-culture.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.aup-bodenmanagement.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.ski-info.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.onepager-hautarzt-steinhoff.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.precurix.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.precurix.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.work.precurix.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.selfy.hausarzt-langendreer.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.praxis-parkstrasse.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.praxis-goek.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.hausarzt-langendreer.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.selfy.frauenarzt-bankamp.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.rothluebbers-und-partner.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.selfy.rothluebbers-und-partner.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.die-picknicker.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.sport-info.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.die-picknicker.de.praxis-tv.org secure_content
+SetEnvIf Host  back.onepager-gelb.hautarzt-steinhoff.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.aup-bm.de.praxis-tv.org secure_content
+SetEnvIf Host  backup.onepager-michael-schubert.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  backup.onepager-denker.responsive.cms.docspot.tv.praxis-tv.org secure_content
+SetEnvIf Host  praxis-tv.org secure_content
+
+
+
+
+
+
+Order Allow,Deny
+Allow from all
+Deny from env=secure_content
+
+Satisfy Any
+
+
+
+### Begin: Compression via TYPO3 ###
+
+# Compressing resource files will save bandwidth and so improve loading speed especially for users
+# with slower internet connections. TYPO3 can compress the .js and .css files for you.
+# *) Uncomment the following lines and
+# *) Set $TYPO3_CONF_VARS['BE']['compressionLevel'] = '9' for the Backend
+# *) Set $TYPO3_CONF_VARS['FE']['compressionLevel'] = '9' together with the TypoScript properties
+#    config.compressJs and config.compressCss for GZIP compression of Frontend JS and CSS files.
+
+#<FilesMatch "\.js\.gzip$">
+#	AddType "text/javascript" .gzip
+#</FilesMatch>
+#<FilesMatch "\.css\.gzip$">
+#	AddType "text/css" .gzip
+#</FilesMatch>
+#AddEncoding gzip .gzip
+
+AddType video/mp4 .mp4
+AddType video/x-m4v .m4v
+AddType video/webm .webm
+AddType audio/webm .weba
+AddType video/ogg .ogm
+AddType video/ogg .ogv
+AddType video/ogg .ogg
+
+### End: Compression via TYPO3 ###
+
+
+### Begin: Browser caching of ressource files ###
+
+# Enable long browser caching for JavaScript and CSS files.
+
+# This affects Frontend and Backend and increases performance.
+# You can also add other file extensions (like gif, png, jpg), if you want them to be longer cached, too.
+
+<FilesMatch "\.(js|css)$">
+  <IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresDefault "access plus 7 days"
+  </IfModule>
+  FileETag MTime Size
+</FilesMatch>
+
+### End: Browser caching of ressource files ###
+
+
+### Begin: Settings for mod_rewrite ###
+
+# You need rewriting, if you use a URL-Rewriting extension (RealURL, CoolUri).
+
+<IfModule mod_rewrite.c>
+
+# Enable URL rewriting
+RewriteEngine On
+
+# Change this path, if your TYPO3 installation is located in a subdirectory of the website root.
+#RewriteBase /
+
+# Rules für docspot.tv vom CODI
+
+# /admin umleiten
+RewriteCond %{HTTP_HOST} ^www\.docspot\.tv$ [NC]
+RewriteCond %{REQUEST_URI} ^/admin/.*$
+RewriteRule ^(.*)$ http://www.show-edit.de/$1 [R=301,L]
+
+# /customers umleiten
+RewriteCond %{HTTP_HOST} ^www\.docspot\.tv$ [NC]
+RewriteCond %{REQUEST_URI} ^/customers/.*$
+RewriteRule ^(.*)$ http://www.show-edit.de/$1 [R=301,L]
+
+# /resellers umleiten
+RewriteCond %{HTTP_HOST} ^www\.docspot\.tv$ [NC]
+RewriteCond %{REQUEST_URI} ^/resellers/.*$
+RewriteRule ^(.*)$ http://www.show-edit.de/$1 [R=301,L]
+
+# /flash_player  umleiten
+RewriteCond %{HTTP_HOST} ^www\.docspot\.tv$ [NC]
+RewriteCond %{REQUEST_URI} ^/flash_player/.*$
+RewriteRule ^(.*)$ http://www.show-edit.de/$1 [R=301,L]
+
+# getVideo umleiten
+RewriteCond %{HTTP_HOST} ^www\.docspot\.tv$ [NC]
+RewriteCond %{REQUEST_URI} ^/getVideo.*$
+RewriteRule ^(.*)$ http://www.show-edit.de/$1 [R=301,L]
+
+# feed umleiten
+RewriteCond %{HTTP_HOST} ^www\.docspot\.tv$ [NC]
+RewriteCond %{REQUEST_URI} ^/feed.*$
+RewriteRule ^(.*)$ http://www.show-edit.de/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.frauenarzt-schubert\.de$ [NC]
+RewriteRule ^sites/(.*)$ https://www.frauenarzt-schubert.de [R=301,L]
+
+# https umleiten
+#RewriteCond %{HTTP_HOST} ^www\.docspot\.tv$ [NC]
+#RewriteCond %{SERVER_PORT} ^443$ [OR]
+#RewriteCond %{HTTPS} on
+#RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+#RewriteCond %{HTTP_HOST} ^docspot\.tv$ [NC]
+#RewriteCond %{SERVER_PORT} ^443$ [OR]
+#RewriteCond %{HTTPS} on
+#RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+
+# Rules to set ApplicationContext based on hostname
+#RewriteCond %{HTTP_HOST} ^dev\.example\.com$
+#RewriteRule (.*) $1 [E=TYPO3_CONTEXT:Development]
+#RewriteCond %{HTTP_HOST} ^staging\.example\.com$
+#RewriteRule (.*) $1 [E=TYPO3_CONTEXT:Production/Staging]
+#RewriteCond %{HTTP_HOST} ^www\.example\.com$
+#RewriteRule (.*) $1 [E=TYPO3_CONTEXT:Production]
+
+# Rule for versioned static files, configured through:
+# - $TYPO3_CONF_VARS['BE']['versionNumberInFilename']
+# - $TYPO3_CONF_VARS['FE']['versionNumberInFilename']
+# IMPORTANT: This rule has to be the very first RewriteCond in order to work!
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)\.(\d+)\.(php|js|css|png|jpg|gif|gzip)$ $1.$3 [L]
+
+# Basic security checks
+# - Restrict access to deleted files in Recycler directories
+# - Restrict access to TypoScript files in default templates directories
+# - Restrict access to Private extension directories
+# For httpd.conf, use these lines instead of the next ones:
+# RewriteRule ^/TYPO3root/fileadmin/(.*/)?_recycler_/ - [F]
+# RewriteRule ^/TYPO3root/fileadmin/templates/.*(\.txt|\.ts)$ - [F]
+# RewriteRule ^/TYPO3root/typo3conf/ext/[^/]+/Resources/Private/ - [F]
+RewriteRule ^fileadmin/(.*/)?_recycler_/ - [F]
+RewriteRule ^fileadmin/templates/.*(\.txt|\.ts)$ - [F]
+RewriteRule ^typo3conf/ext/[^/]+/Resources/Private/ - [F]
+
+# Stop rewrite processing, if we are in the typo3/ directory.
+# For httpd.conf, use this line instead of the next one:
+# RewriteRule ^/TYPO3root/(typo3/|fileadmin/|typo3conf/|typo3temp/|uploads/|favicon\.ico) - [L]
+RewriteRule ^(typo3/|fileadmin/|typo3conf/|typo3temp/|uploads/|favicon\.ico) - [L]
+
+# If the file/symlink/directory does not exist => Redirect to index.php.
+# For httpd.conf, you need to prefix each '%{REQUEST_FILENAME}' with '%{DOCUMENT_ROOT}'.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+# Main URL rewriting.
+# For httpd.conf, use this line instead of the next one:
+# RewriteRule .* /TYPO3root/index.php [L]
+RewriteRule .* index.php [L]
+
+</IfModule>
+
+### End: Settings for mod_rewrite ###
+
+
+### Begin: PHP optimisation ###
+
+# If you do not change the following settings, the default values will be used.
+
+# TYPO3 works fine with register_globals turned off.
+# This is highly recommended, if your web server has it turned on.
+#php_flag register_globals off
+
+### End: PHP optimisation ###
+
+
+
+### Begin: Miscellaneous ###
+
+# Make sure that directory listings are disabled.
+#Options -Indexes
+
+### End: Miscellaneous ###
+
+
+# Add your own rules here.
+# ...
